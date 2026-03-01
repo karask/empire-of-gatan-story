@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Empire of Gatan - The Burnt One Returns</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="page-background"></div>
+    <div class="ornament-corner top-left"></div>
+    <div class="ornament-corner top-right"></div>
+    <div class="ornament-corner bottom-left"></div>
+    <div class="ornament-corner bottom-right"></div>
+
+    <div class="container">
+        <header>
+            <div class="title-container">
+                <h1>The Empire of Gatan</h1>
+                <div class="divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon">✦</span>
+                    <span class="divider-line"></span>
+                </div>
+                <h2>The Burnt One Returns</h2>
+            </div>
+        </header>
+
+        <main>
+            <div class="scene-wrapper">
+                <div class="scene-container">
+                    <img id="scene-image" src="Bors.png" alt="Scene Placeholder" class="fade-transition">
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
+
+            <div class="text-wrapper">
+                <div class="text-container glass-panel">
+                    <p id="scene-text" class="fade-transition">Loading story...</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="controls glass-panel">
+                <button id="btn-prev" class="fantasy-btn" title="Previous Scene">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                        <line x1="5" y1="19" x2="5" y2="5"></line>
+                    </svg>
+                </button>
+
+                <div class="audio-wrapper">
+                    <audio id="story-audio" controls>
+                        <source src="TheChroniclesOfGatan-Audio.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <button id="btn-next" class="fantasy-btn" title="Next Scene">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                        <line x1="19" y1="5" x2="19" y2="19"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar-bg">
+                    <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                </div>
+                <div class="scene-indicator-wrapper">
+                    <span class="ornament-small">✧</span>
+                    <span id="scene-indicator">Prologue</span>
+                    <span class="ornament-small">✧</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

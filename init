@@ -1,0 +1,16 @@
+In the PDF (TheChroniclesOfGatan.pdf) you will find a TTRPG campaign that we played some time ago. The text version is in pdf_text.txt. There is also an MP3 (TheChroniclesOfGatan-Audio.mp3) with a voice over of that story (with minor differences only in the beginning... the pdf has a bit more info, like a timeline of the setting). I also have a couple of images of some of the characters. (Bors.png for Bors, Ambrosius.png for Ambrosius, etc.)
+
+I want to make a website page. It should have several images and text. The images need to be related to the story. The images will be displayed one after another (fade out, fade in). Below the image there should be the text. I want the mp3 to be played in the background while showing the text below the image. I want the audio to be sync'ed with the text and the related images. 
+
+I want the characters to be consistent throughout all the images. Again, consult the images I have provided for the characters in the folder. 
+
+I want you to be creative but be true to the story. Initially, do not create any image. Just describe to me each comic scene and tell me what part of the text and voice would fit with that scene. Create scenes (again no images) until we have the whole story. 
+
+The whole story needs to be included. If you think that some parts need to be described first to make more sense please tell me so (some of the text was written when it made sense in the context of the game, but not necessarily as a standalone story).
+
+The story is quite bit so I expect many scenes. 
+
+
+What technologies should I use to create this website? I am open to suggestions. I want it to be easy to update and maintain. I also want it to be responsive and work on different devices. Most importantly, I want it to be easy to sync the audio with the images and text. 
+
+Also, in case we need to split the audio (will it help?) into smaller files how would we do this?
