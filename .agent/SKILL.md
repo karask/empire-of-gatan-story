@@ -7,7 +7,7 @@ description: Use this skill when generating images containing one or more member
 - **Bors (Warrior):** Refer to `character_vault/Bors.png`. Features: chain mail, sword, shield.
 - **Ambrosius (Mage):** Refer to `character_vault/Ambrosius.png`. Features: Black robes, staff.
 - **Evelyn (Huntress):** Refer to `character_vault/Evelyn.png`. Features: Leather armor, bow.
-- **Ivan (Warrior):** Refer to `character_vault/Ivan.png`. Features: Platemail, two-handed sword. Do not include symbols like crosses.
+- **Ivan (Warrior):** Refer to `character_vault/Ivan.png`. Features: Platemail, two-handed sword. Do not include symbols like crosses. When not wearing his helmIvan has short black hair and is unshaven.
 - **Deean (Wizard):** Refer to `character_vault/Deean.png`. Features: Grey twilight Robes, staff.
 - **Dargon (Warrior):** Refer to `character_vault/Dargon.png`. Features: Blue tunic, sword.
 - **Zoltran (Count):** Refer to `character_vault/Zoltran.png`. Features: Grey Plate mail and grey cloak, sword.

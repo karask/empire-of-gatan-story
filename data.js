@@ -29,7 +29,7 @@ window.storyScenes = [
         startTime: 44,
         image: "assets/images/glorious_gatan.png",
         panAnimation: "top-to-bottom",
-        text: "Though it be not Heaven, it is the closest mortal realm may aspire to reach. Let me, Richjo the Sage, introduce you to noble Gatan, an Empire to challenge the glories of ages past!"
+        text: "Though it be not Heaven, it is the closest mortal realm may aspire to reach. Let me, Richjo the Sage, introduce you to noble Gatan, an Empire to challenge the glories of ages past!\""
     },
     {
         slideNumber: 5,
@@ -123,7 +123,7 @@ window.storyScenes = [
         slideNumber: 16,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 189,
-        image: "assets/images/fellowship_wagon_departure_v8.png",
+        image: "assets/images/fellowship_wagon_departure_v11.png",
         panAnimation: "top-to-bottom",
         text: "With hearts resolute and oaths unspoken, the fellowship accepted her charge, and at the breaking of the next dawn they set forth."
     },
@@ -131,14 +131,14 @@ window.storyScenes = [
         slideNumber: 17,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 198,
-        image: "assets/images/snakebite_pass_wagon_topdown.png",
+        image: "assets/images/snakebite_pass_wagon_topdown_v2.png",
         panAnimation: "top-to-bottom",
         text: "Deean and Dargon rode in an open wain, its boards laden with provisions ample for the road ahead, while the company walked as their shield and sword."
     },
     {
         slideNumber: 18,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 210,
+        startTime: 208,
         image: "assets/images/snakebite_pass_wagon_distant_final.png",
         //mirrorImage: true,
         panAnimation: "bottom-to-top",
@@ -147,7 +147,7 @@ window.storyScenes = [
     {
         slideNumber: 19,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 222,
+        startTime: 220,
         image: "assets/images/zoltran_tower_wilderness.png",
         panAnimation: "top-to-bottom",
         text: "Count Zoltran, eighteen winters past, had departed the imperial city of Sotan, tasked by Emperor Ilmar the First—a ruler of stern vision—to secure his family’s eastern demesne, a wild land bordering the empire’s edge."
@@ -155,7 +155,7 @@ window.storyScenes = [
     {
         slideNumber: 20,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 238,
+        startTime: 236,
         image: "assets/images/Bors.png",
         panAnimation: "top-to-bottom",
         text: "Ilmar sought to restore the realm to its ancient glory, lost amid the ruinous Ducal War and the fell invasion of the Burning Heart Horde from the east."
