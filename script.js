@@ -205,6 +205,11 @@ class StoryComic {
     goToNextScene() {
         let currentIndex = this.pendingSceneIndex !== null ? this.pendingSceneIndex : this.currentSceneIndex;
         if (currentIndex < this.scenes.length - 1) {
+            const nextScene = this.scenes[currentIndex + 1];
+            // Immediately sync audio to match the fade-out timing of natural transitions
+            if (this.currentAudioSrc === nextScene.audioSrc) {
+                this.audio.currentTime = nextScene.startTime;
+            }
             this.transitionToScene(currentIndex + 1);
         }
     }
@@ -217,6 +222,11 @@ class StoryComic {
             if (this.audio.currentTime > scene.startTime + 2 && !scene.endTime) {
                 this.audio.currentTime = scene.startTime;
             } else {
+                const prevScene = this.scenes[currentIndex - 1];
+                // Immediately sync audio to match the fade-out timing of natural transitions
+                if (this.currentAudioSrc === prevScene.audioSrc) {
+                    this.audio.currentTime = prevScene.startTime;
+                }
                 this.transitionToScene(currentIndex - 1);
             }
         } else {
