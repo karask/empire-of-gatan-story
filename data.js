@@ -331,71 +331,71 @@ window.storyScenes = [
     {
         slideNumber: 42,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 512,
-        image: "assets/images/Bors.png",
+        startTime: 506,
+        image: "assets/images/scene42_oath_of_vengeance.jpeg",
         panAnimation: "top-to-bottom",
         text: "With solemn words, the company swore to this charge and pressed onward through the veiled pass."
     },
     {
         slideNumber: 43,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 519,
-        image: "assets/images/Bors.png",
+        startTime: 513,
+        image: "assets/images/scene43_troll_bridge_distant.jpeg",
         panAnimation: "top-to-bottom",
-        text: "The Troll Bridge Ahead, rising from the mists, stood a stone bridge, its arches a sturdy testament to the craft of the Old Empire, whose records had faded into shadow, leaving only such works to speak"
+        text: "The Troll Bridge<br><br>Ahead, rising from the mists, stood a stone bridge, its arches a sturdy testament to the craft of the Old Empire, whose records had faded into shadow, leaving only such works to speak"
     },
     {
         slideNumber: 44,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 534,
-        image: "assets/images/Bors.png",
+        startTime: 529,
+        image: "assets/images/scene44_troll_bridge_front_refined_v2.jpeg",
         panAnimation: "top-to-bottom",
         text: "of its splendor. Though the new empire labored to reclaim that lost glory, the bridge stood as a silent reminder of the heights yet unscaled."
     },
     {
         slideNumber: 45,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 545,
-        image: "assets/images/Bors.png",
+        startTime: 539,
+        image: "assets/images/scene45_evelyn_investigates_bridge.jpeg",
         panAnimation: "top-to-bottom",
         text: "As they drew nigh, a rumbling snore echoed from below, and Evelyn, silent as a wraith upon the wind, scouted the way."
     },
     {
         slideNumber: 46,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 554,
-        image: "assets/images/Bors.png",
+        startTime: 549,
+        image: "assets/images/scene46_bridge_troll_sleeping.jpeg",
         panAnimation: "top-to-bottom",
         text: "Beneath the span, at the edge of a sheer cliff, she spied a troll, its bulk sprawled in slumber."
     },
     {
         slideNumber: 47,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 561,
-        image: "assets/images/Bors.png",
+        startTime: 557,
+        image: "assets/images/scene47_troll_awakes_and_climbs.jpeg",
         panAnimation: "top-to-bottom",
         text: "The company sought to fall upon it unawares, yet the beast’s ears twitched at their approach, and with startling swiftness it awoke and clambered atop the bridge, its roar shaking the stones."
     },
     {
         slideNumber: 48,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 576,
-        image: "assets/images/Bors.png",
+        startTime: 569,
+        image: "assets/images/scene48_dargon_charges_troll.jpeg",
         panAnimation: "top-to-bottom",
         text: "Dargon, aflame with righteous zeal, seized the moment to purge this abomination from the land, charging forth with Bors and Ivan at his heels."
     },
     {
         slideNumber: 49,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 587,
-        image: "assets/images/Bors.png",
+        startTime: 579,
+        image: "assets/images/scene49_troll_swings_at_dargon.jpeg",
         panAnimation: "top-to-bottom",
         text: "The troll swung a great club, its blow hurling Dargon meters hence, tumbling over the earth, yet by some grace—likely Deean’s subtle art—he rose with naught but bruises to mark the strike."
     },
     {
         slideNumber: 50,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 601,
+        startTime: 592,
         image: "assets/images/Bors.png",
         panAnimation: "top-to-bottom",
         text: "Ivan followed, his greatsword flashing like lightning, cleaving the troll’s hide so deep that it staggered and fell."
@@ -414,7 +414,7 @@ window.storyScenes = [
         startTime: 626,
         image: "assets/images/Bors.png",
         panAnimation: "top-to-bottom",
-        text: "The Goblin Caves Ere long, the company came upon a barrier of logs, their ends hammered deep into the earth, blocking the road utterly."
+        text: "The Goblin Caves<br><br>Ere long, the company came upon a barrier of logs, their ends hammered deep into the earth, blocking the road utterly."
     },
     {
         slideNumber: 53,
