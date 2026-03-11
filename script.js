@@ -167,7 +167,7 @@ class StoryComic {
         // Update content
         this.image.src = scene.image;
         // Handle image alignment and panning positioning
-        this.image.classList.remove('pan-top-to-bottom');
+        this.image.classList.remove('pan-top-to-bottom', 'pan-bottom-to-top', 'pan-left-to-right', 'pan-right-to-left');
         void this.image.offsetWidth; // Trigger DOM reflow to restart animations cleanly
 
         if (scene.panAnimation) {

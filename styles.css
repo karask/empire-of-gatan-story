@@ -347,6 +347,34 @@ audio::-webkit-media-controls-play-button {
     animation: pan-bottom-to-top 15s linear alternate forwards;
 }
 
+@keyframes pan-left-to-right {
+    0% {
+        object-position: left center;
+    }
+
+    100% {
+        object-position: right center;
+    }
+}
+
+.pan-left-to-right {
+    animation: pan-left-to-right 15s linear alternate forwards;
+}
+
+@keyframes pan-right-to-left {
+    0% {
+        object-position: right center;
+    }
+
+    100% {
+        object-position: left center;
+    }
+}
+
+.pan-right-to-left {
+    animation: pan-right-to-left 15s linear alternate forwards;
+}
+
 .hidden {
     display: none !important;
 }

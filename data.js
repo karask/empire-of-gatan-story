@@ -396,46 +396,46 @@ window.storyScenes = [
         slideNumber: 50,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 592,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene50_knight_cleave_troll.jpeg",
         panAnimation: "top-to-bottom",
         text: "Ivan followed, his greatsword flashing like lightning, cleaving the troll’s hide so deep that it staggered and fell."
     },
     {
         slideNumber: 51,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 610,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        startTime: 600,
+        image: "assets/images/scene51_bors_decapitates_troll_on_spike.jpeg",
+        panAnimation: "left-to-right",
         text: "Bors, with a swift and final stroke, struck off its head, and Ivan raised the grim trophy upon a pike, a stern warning to all who defied the empire’s might—a deed that brought a fierce grin to Dargon’s lips."
     },
     {
         slideNumber: 52,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 626,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        startTime: 617,
+        image: "assets/images/scene52_logs_bar_the_pass.jpeg",
+        panAnimation: "right-to-left",
         text: "The Goblin Caves<br><br>Ere long, the company came upon a barrier of logs, their ends hammered deep into the earth, blocking the road utterly."
     },
     {
         slideNumber: 53,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 636,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        startTime: 630,
+        image: "assets/images/scene52_logs_bar_the_pass.jpeg",
+        panAnimation: "left-to-right",
         text: "To the left rose a cliff, nigh thirty meters high, its face too sheer to scale with ease, while to the right a gentler hill offered passage afoot."
     },
     {
         slideNumber: 54,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 647,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        startTime: 640,
+        image: "assets/images/scene54_door_is_broken.jpeg",
+        panAnimation: "left-to-right",
         text: "Amid the timbers they found a wooden portal, and with strength of arm, Ivan and Bors forced it asunder, its groan a thunderous herald that echoed through the pass."
     },
     {
         slideNumber: 55,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 659,
+        startTime: 655,
         image: "assets/images/Bors.png",
         panAnimation: "top-to-bottom",
         text: "Within lay a cavern old and forsaken, a labyrinth carved beneath the hill, its depths cloaked in pitch-black shadow."
