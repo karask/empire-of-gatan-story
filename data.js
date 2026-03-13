@@ -3,7 +3,7 @@ window.storyScenes = [
         slideNumber: 1,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 0,
-        image: "assets/images/GatanMap.png",
+        image: "assets/images/scene1_gatan_map.png",
         panAnimation: "top-to-bottom",
         text: "Empire of Gatan: The Burnt One Returns<br><br>“Fair indeed are its pastures, gentle its hills, deep and ancient its forests, and awe-inspiring its mountains. Its people are counted amongst the most civilised, learned, and honourable in all the lands."
     },
@@ -11,7 +11,7 @@ window.storyScenes = [
         slideNumber: 2,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 20,
-        image: "assets/images/empire_cities.png",
+        image: "assets/images/scene2_empire_cities.png",
         panAnimation: "top-to-bottom",
         text: "Wise are its laws, ordained by the Celestial Emperor himself. Expansive and well-planned are its cities, mighty and magnificent its fortifications."
     },
@@ -19,7 +19,7 @@ window.storyScenes = [
         slideNumber: 3,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 32,
-        image: "assets/images/empire_people.png",
+        image: "assets/images/scene3_empire_people.png",
         panAnimation: "top-to-bottom",
         text: "Rich in treasure and steeped in culture, Gatan holds within its borders noble Knights, cunning Wizards, stout and steadfast peasants, gracious Lords, and Ladies of surpassing beauty."
     },
@@ -27,7 +27,7 @@ window.storyScenes = [
         slideNumber: 4,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 44,
-        image: "assets/images/glorious_gatan.png",
+        image: "assets/images/scene4_glorious_gatan.png",
         panAnimation: "top-to-bottom",
         text: "Though it be not Heaven, it is the closest mortal realm may aspire to reach. Let me, Richjo the Sage, introduce you to noble Gatan, an Empire to challenge the glories of ages past!\""
     },
@@ -35,7 +35,7 @@ window.storyScenes = [
         slideNumber: 5,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 59,
-        image: "assets/images/sage_intro.png",
+        image: "assets/images/scene5_sage_intro.png",
         panAnimation: "top-to-bottom",
         text: "-- Richjo the Sage, A New Traveler’s Guide to the Empire, Sotan University Press, 49 After Unity."
     },
@@ -43,7 +43,7 @@ window.storyScenes = [
         slideNumber: 6,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 69,
-        image: "assets/images/ambrosius_and_bors.png",
+        image: "assets/images/scene6_ambrosius_and_bors.png",
         panAnimation: "top-to-bottom",
         text: "The Protagonists of this Tale:<br><br>Ambrosius, a weaver of spells and seeker of hidden truths. Bors, a stalwart knight of unyielding heart."
     },
@@ -51,7 +51,7 @@ window.storyScenes = [
         slideNumber: 7,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 81,
-        image: "assets/images/evelyn_and_ivan.png",
+        image: "assets/images/scene7_evelyn_and_ivan.png",
         panAnimation: "top-to-bottom",
         text: "Evelyn Greenvale, swift of bow and keen of eye. Ivan Ironheart, a warrior bold, whose blade knows no fear."
     },
@@ -59,7 +59,7 @@ window.storyScenes = [
         slideNumber: 8,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 91,
-        image: "assets/images/party_winter.png",
+        image: "assets/images/scene8_party_winter.png",
         panAnimation: "top-to-bottom",
         text: "These four, bound by fate, have wandered the roads together for nigh on two winters, their strengths woven as threads in a tapestry of trust."
     },
@@ -67,7 +67,7 @@ window.storyScenes = [
         slideNumber: 9,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 101,
-        image: "assets/images/ossoway_arrival.png",
+        image: "assets/images/scene9_ossoway_arrival.png",
         panAnimation: "top-to-bottom",
         text: "Chapter One: A Road Less Trodden (Early Autumn, 50 AU)<br><br>The Journey’s Dawn<br>In the waning days of summer, when the leaves of the trees began to gleam with the first gold of autumn, there came unto Ossoway—a humble town upon the wild outskirts of the Empire of Gatan—a band of wanderers bold and true."
     },
@@ -75,7 +75,7 @@ window.storyScenes = [
         slideNumber: 10,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 124,
-        image: "assets/images/party_forest_topdown.png",
+        image: "assets/images/scene10_party_forest_topdown.png",
         panAnimation: "top-to-bottom",
         text: "Ambrosius, sage of subtle craft; Bors, knight of unyielding honor; Evelyn Greenvale, keen-eyed huntress of the wilds; and Ivan Ironheart, warrior of fierce blade and fearless heart—these four had trodden many a perilous path together."
     },
@@ -83,7 +83,7 @@ window.storyScenes = [
         slideNumber: 11,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 141,
-        image: "assets/images/party_revered_ossoway.png",
+        image: "assets/images/scene11_party_revered_ossoway.png",
         panAnimation: "top-to-bottom",
         text: "In Ossoway they had wrought deeds of valor as sellswords, their names whispered with reverence among the folk of that frontier hold."
     },
@@ -91,7 +91,7 @@ window.storyScenes = [
         slideNumber: 12,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 150,
-        image: "assets/images/deean_arrival_ossoway.png",
+        image: "assets/images/scene12_deean_arrival_ossoway.png",
         panAnimation: "top-to-bottom",
         text: "Into this quiet haven stepped Deean, an Imperial Wizard clad in robes of twilight grey, woven as though from the mists of dawn, her eyes agleam with arcane wisdom."
     },
@@ -99,7 +99,7 @@ window.storyScenes = [
         slideNumber: 13,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 162,
-        image: "assets/images/dargon_intro.png",
+        image: "assets/images/scene13_dargon_intro.png",
         panAnimation: "top-to-bottom",
         text: "With her was young Dargon, a lad of fiery spirit and noble lineage, her charge and companion."
     },
@@ -107,7 +107,7 @@ window.storyScenes = [
         slideNumber: 14,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 168,
-        image: "assets/images/job_offer.png",
+        image: "assets/images/scene14_job_offer.png",
         panAnimation: "top-to-bottom",
         text: "She offered unto the company a task of weight and worth: to guard her and Dargon upon a journey to White Dragon Fort in Two Fort County, the seat of Count Zoltran, Dargon’s sire."
     },
@@ -115,7 +115,7 @@ window.storyScenes = [
         slideNumber: 15,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 181.5,
-        image: "assets/images/snakebite_pass_empty.png",
+        image: "assets/images/scene15_snakebite_pass_empty.png",
         panAnimation: "top-to-bottom",
         text: "The path they must tread wound through Snakebite Pass, a narrow cleft hewn amidst the rugged Jank Hills, far from the empire’s smooth and tended roads."
     },
@@ -123,23 +123,23 @@ window.storyScenes = [
         slideNumber: 16,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 191,
-        image: "assets/images/fellowship_journey_scene16_final_v2.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene16_fellowship_journey.jpeg",
+        panAnimation: "left-to-right",
         text: "With hearts resolute and oaths unspoken, the fellowship accepted her charge, and at the breaking of the next dawn they set forth."
     },
     {
         slideNumber: 17,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 200,
-        image: "assets/images/scene17_forest_backview.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene17_forest_backview.jpeg",
+        panAnimation: "left-to-right",
         text: "Deean and Dargon rode in an open wain, its boards laden with provisions ample for the road ahead, while the company walked as their shield and sword."
     },
     {
         slideNumber: 18,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 212,
-        image: "assets/images/scene18_forest_distant.png",
+        image: "assets/images/scene18_forest_distant.jpeg",
         //mirrorImage: true,
         panAnimation: "bottom-to-top",
         text: "Dargon, a youth fair of face and eager of soul, burned with a boundless zeal for the journey, his heart alight with dreams of adventure and the long-awaited meeting with his father."
@@ -148,7 +148,7 @@ window.storyScenes = [
         slideNumber: 19,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 224,
-        image: "assets/images/zoltran_tower_wilderness.png",
+        image: "assets/images/scene19_zoltran_tower_wilderness.png",
         panAnimation: "top-to-bottom",
         text: "Count Zoltran, eighteen winters past, had departed the imperial city of Sotan, tasked by Emperor Ilmar the First—a ruler of stern vision—to secure his family’s eastern demesne, a wild land bordering the empire’s edge."
     },
@@ -156,7 +156,7 @@ window.storyScenes = [
         slideNumber: 20,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 241,
-        image: "assets/images/pillaged_town.png",
+        image: "assets/images/scene20_pillaged_town.png",
         panAnimation: "top-to-bottom",
         text: "Ilmar sought to restore the realm to its ancient glory, lost amid the ruinous Ducal War and the fell invasion of the Burning Heart Horde from the east."
     },
@@ -164,7 +164,7 @@ window.storyScenes = [
         slideNumber: 21,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 250,
-        image: "assets/images/dargon_training.png",
+        image: "assets/images/scene21_dargon_training.png",
         panAnimation: "top-to-bottom",
         text: "Dargon, trained in the courts of Sotan by masters of war and wisdom, had now come of age, his spirit eager to join his father in bringing light to the barbarous folk of the east and smiting any remnant of the Horde that dared linger."
     },
@@ -172,7 +172,7 @@ window.storyScenes = [
         slideNumber: 22,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 268,
-        image: "assets/images/dargon_cheerful.png",
+        image: "assets/images/scene22_dargon_cheerful.png",
         panAnimation: "top-to-bottom",
         text: "A lad of high cheer he was, so long as none spoke ill of the empire or the Celestial Emperor Maximus, whose divine will upheld the realm."
     },
@@ -180,7 +180,7 @@ window.storyScenes = [
         slideNumber: 23,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 277,
-        image: "assets/images/forest_cart_story_time_v3.png",
+        image: "assets/images/scene23_forest_cart_story_time_v3.png",
         panAnimation: "top-to-bottom",
         text: "With wide eyes and a ready ear, he drank deep of the company’s tales, their words kindling his youthful fire."
     },
