@@ -435,87 +435,87 @@ window.storyScenes = [
     {
         slideNumber: 55,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 655,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        startTime: 653,
+        image: "assets/images/scene55_dark_cave_tunnel.jpeg",
+        panAnimation: "left-to-right",
         text: "Within lay a cavern old and forsaken, a labyrinth carved beneath the hill, its depths cloaked in pitch-black shadow."
     },
     {
         slideNumber: 56,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 668,
-        image: "assets/images/Bors.png",
+        startTime: 662,
+        image: "assets/images/scene56_attack_in_the_dark.jpeg",
         panAnimation: "top-to-bottom",
         text: "Scarcely had they crossed the threshold when goblins assailed them—some loosing arrows from the dark, others lurking in a small chamber nigh the entrance."
     },
     {
         slideNumber: 57,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 680,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        startTime: 671,
+        image: "assets/images/scene57_ivan_kills_goblins.jpeg",
+        panAnimation: "left-to-right",
         text: "Bors charged down the tunnel, his shield a bulwark against the storm of shafts, while Ivan stormed the chamber, his blade reaping swift death upon the three goblins within."
     },
     {
         slideNumber: 58,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 693,
-        image: "assets/images/Bors.png",
+        startTime: 682,
+        image: "assets/images/scene58_bors_is_hit.jpeg",
         panAnimation: "top-to-bottom",
         text: "Ambrosius wove a spell of light, its radiance piercing the gloom, though the foe retreated deeper into shadow. From that darkness came a lucky dart, striking Bors in the neck with grievous force."
     },
     {
         slideNumber: 59,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 708,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        startTime: 695,
+        image: "assets/images/scene59_bors_is_strong.jpeg",
+        panAnimation: "left-to-right",
         text: "He staggered, his breath faltering, yet with a mighty effort he rose once more, fighting on through pain and weariness."
     },
     {
         slideNumber: 60,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 717,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        startTime: 704,
+        image: "assets/images/scene60_evelyn_and_ambrosius_help.jpeg",
+        panAnimation: "left-to-right",
         text: "Arrows sang through the air, Evelyn’s bow answering in kind, while Ambrosius mended their wounds and lit their path with ceaseless care."
     },
     {
         slideNumber: 61,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 727,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        startTime: 715,
+        image: "assets/images/scene61_ivan_is_in_pain.jpeg",
+        panAnimation: "left-to-right",
         text: "The tide seemed to turn in their favor until Ivan cried out, a stab of unseen sorcery piercing his vitals."
     },
     {
         slideNumber: 62,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 735,
-        image: "assets/images/Bors.png",
+        startTime: 723,
+        image: "assets/images/scene62_goblin_shaman_and_doll.jpeg",
         panAnimation: "top-to-bottom",
         text: "Ambrosius’s light revealed a goblin mage, its hands twisting a corn doll in a rite of dark power, wounding Ivan from afar."
     },
     {
         slideNumber: 63,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 744,
-        image: "assets/images/Bors.png",
+        startTime: 733,
+        image: "assets/images/scene63_ivan_kills_goblin_mage.jpeg",
         panAnimation: "top-to-bottom",
         text: "Sensing his time was short, Ivan summoned his last strength and charged, his blade hewing the fiend asunder like a child’s toy."
     },
     {
         slideNumber: 64,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 754,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        startTime: 743,
+        image: "assets/images/scene64_goblin_flees_ambrosius_heals.jpeg",
+        panAnimation: "left-to-right",
         text: "The remaining goblins broke and fled, yet one slipped away into the dark, its fate unknown. Ambrosius tended the company’s hurts, his skill mending Bors’s grievous neck wound with a surgeon’s precision."
     },
     {
         slideNumber: 65,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 769,
+        startTime: 757,
         image: "assets/images/Bors.png",
         panAnimation: "top-to-bottom",
         text: "In their search of the caverns, they found Sir Lodas, a knight of the Order of Thrum, bound in chains within a cell."
