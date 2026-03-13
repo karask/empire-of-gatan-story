@@ -138,10 +138,23 @@ class StoryComic {
         }
     }
 
+    preloadImages(startIndex, count = 3) {
+        for (let i = startIndex + 1; i <= startIndex + count && i < this.scenes.length; i++) {
+            const scene = this.scenes[i];
+            if (!scene.preloadedImageObject) {
+                scene.preloadedImageObject = new Image();
+                scene.preloadedImageObject.src = scene.image;
+            }
+        }
+    }
+
     renderScene(index, autoPlay = false) {
         this.currentSceneIndex = index;
         this.pendingSceneIndex = null;
         const scene = this.scenes[index];
+        
+        // Preload upcoming images
+        this.preloadImages(index);
 
         // Check if we need to swap audio sources
         if (this.currentAudioSrc !== scene.audioSrc) {
