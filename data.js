@@ -516,15 +516,15 @@ window.storyScenes = [
         slideNumber: 65,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 757,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene65_sir_lodas.jpeg",
+        panAnimation: "left-to-right",
         text: "In their search of the caverns, they found Sir Lodas, a knight of the Order of Thrum, bound in chains within a cell."
     },
     {
         slideNumber: 66,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 778,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene66_sir_lodas_captured.jpeg",
         panAnimation: "top-to-bottom",
         text: "He spoke of his capture three days past, taken while journeying to White Dragon Fort, and with gratitude he joined their cause."
     },
@@ -532,23 +532,23 @@ window.storyScenes = [
         slideNumber: 67,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 788,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene67_bors_pool_gold.jpeg",
+        panAnimation: "left-to-right",
         text: "Bors, exploring a chamber bypassed in the fray, discovered a pool at its heart, its waters glinting with gold nuggets and cradling a dead goblin clutching a great green gem."
     },
     {
         slideNumber: 68,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 801,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene68_bors_water_elemental.jpeg",
+        panAnimation: "left-to-right",
         text: "As he reached for the corpse, the waters stirred and rose into a humanoid form, a water elemental fierce and vigilant, guarding its trove."
     },
     {
         slideNumber: 69,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 812,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene69_bors_ambrosius_water_elemental.jpeg",
         panAnimation: "top-to-bottom",
         text: "Ambrosius, wise in such matters, deemed the gold an offering and counselled retreat, for the creature’s wrath was not to be trifled with."
     },
@@ -556,7 +556,7 @@ window.storyScenes = [
         slideNumber: 70,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 822,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene70_deean_urges_haste.jpeg",
         panAnimation: "top-to-bottom",
         text: "Deean, her voice firm, urged them to hasten hence, Dargon’s safety paramount, and so they cleared the logsfrom the road and departed, noting as they went a second entrance hidden amid tangled bushes."
     },
