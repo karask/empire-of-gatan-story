@@ -26,7 +26,7 @@ window.storyScenes = [
     {
         slideNumber: 4,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 44,
+        startTime: 45,
         image: "assets/images/scene4_glorious_gatan.png",
         panAnimation: "top-to-bottom",
         text: "Though it be not Heaven, it is the closest mortal realm may aspire to reach. Let me, Richjo the Sage, introduce you to noble Gatan, an Empire to challenge the glories of ages past!\""
@@ -42,7 +42,7 @@ window.storyScenes = [
     {
         slideNumber: 6,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 69,
+        startTime: 71,
         image: "assets/images/scene6_ambrosius_and_bors.png",
         panAnimation: "top-to-bottom",
         text: "The Protagonists of this Tale:<br><br>Ambrosius, a weaver of spells and seeker of hidden truths. Bors, a stalwart knight of unyielding heart."
@@ -50,7 +50,7 @@ window.storyScenes = [
     {
         slideNumber: 7,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 81,
+        startTime: 83,
         image: "assets/images/scene7_evelyn_and_ivan.png",
         panAnimation: "top-to-bottom",
         text: "Evelyn Greenvale, swift of bow and keen of eye. Ivan Ironheart, a warrior bold, whose blade knows no fear."
@@ -58,7 +58,7 @@ window.storyScenes = [
     {
         slideNumber: 8,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 91,
+        startTime: 92,
         image: "assets/images/scene8_party_winter.png",
         panAnimation: "top-to-bottom",
         text: "These four, bound by fate, have wandered the roads together for nigh on two winters, their strengths woven as threads in a tapestry of trust."
@@ -66,7 +66,7 @@ window.storyScenes = [
     {
         slideNumber: 9,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 101,
+        startTime: 103,
         image: "assets/images/scene9_ossoway_arrival.png",
         panAnimation: "top-to-bottom",
         text: "Chapter One: A Road Less Trodden (Early Autumn, 50 AU)<br><br>The Journey’s Dawn<br>In the waning days of summer, when the leaves of the trees began to gleam with the first gold of autumn, there came unto Ossoway—a humble town upon the wild outskirts of the Empire of Gatan—a band of wanderers bold and true."
@@ -82,7 +82,7 @@ window.storyScenes = [
     {
         slideNumber: 11,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 141,
+        startTime: 142,
         image: "assets/images/scene11_party_revered_ossoway.png",
         panAnimation: "top-to-bottom",
         text: "In Ossoway they had wrought deeds of valor as sellswords, their names whispered with reverence among the folk of that frontier hold."
@@ -98,7 +98,7 @@ window.storyScenes = [
     {
         slideNumber: 13,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 162,
+        startTime: 164,
         image: "assets/images/scene13_dargon_intro.png",
         panAnimation: "top-to-bottom",
         text: "With her was young Dargon, a lad of fiery spirit and noble lineage, her charge and companion."
@@ -106,7 +106,7 @@ window.storyScenes = [
     {
         slideNumber: 14,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 168,
+        startTime: 171,
         image: "assets/images/scene14_job_offer.png",
         panAnimation: "top-to-bottom",
         text: "She offered unto the company a task of weight and worth: to guard her and Dargon upon a journey to White Dragon Fort in Two Fort County, the seat of Count Zoltran, Dargon’s sire."
@@ -114,7 +114,7 @@ window.storyScenes = [
     {
         slideNumber: 15,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 181.5,
+        startTime: 185,
         image: "assets/images/scene15_snakebite_pass_empty.png",
         panAnimation: "top-to-bottom",
         text: "The path they must tread wound through Snakebite Pass, a narrow cleft hewn amidst the rugged Jank Hills, far from the empire’s smooth and tended roads."
@@ -122,7 +122,7 @@ window.storyScenes = [
     {
         slideNumber: 16,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 191,
+        startTime: 194,
         image: "assets/images/scene16_fellowship_journey.jpeg",
         panAnimation: "left-to-right",
         text: "With hearts resolute and oaths unspoken, the fellowship accepted her charge, and at the breaking of the next dawn they set forth."
@@ -130,7 +130,7 @@ window.storyScenes = [
     {
         slideNumber: 17,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 200,
+        startTime: 203,
         image: "assets/images/scene17_forest_backview.jpeg",
         panAnimation: "left-to-right",
         text: "Deean and Dargon rode in an open wain, its boards laden with provisions ample for the road ahead, while the company walked as their shield and sword."
@@ -138,7 +138,7 @@ window.storyScenes = [
     {
         slideNumber: 18,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
-        startTime: 212,
+        startTime: 214,
         image: "assets/images/scene18_forest_distant.jpeg",
         //mirrorImage: true,
         panAnimation: "bottom-to-top",
@@ -564,63 +564,63 @@ window.storyScenes = [
         slideNumber: 71,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 837,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
-        text: "The White Dragon Fort: The Arrival<br><brThe fort lay nigh, yet the company, wearied by their trials, sought rest ere pressing on. In a clearing near the road, hidden from prying eyes, they made camp."
+        image: "assets/images/scene71_company_camps.jpeg",
+        panAnimation: "left-to-right",
+        text: "The White Dragon Fort: The Arrival<br><br>The fort lay nigh, yet the company, wearied by their trials, sought rest ere pressing on. In a clearing near the road, hidden from prying eyes, they made camp."
     },
     {
         slideNumber: 72,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 852,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene72_sir_lodas_vanished.jpeg",
+        panAnimation: "left-to-right",
         text: "In the deep of night, after his watch, Bors found Sir Lodas vanished, his absence a riddle cloaked in shadow. Troubled but undeterred, they resumed their march at dawn."
     },
     {
         slideNumber: 73,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 865,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene73_snakebite_pass_ends.jpeg",
+        panAnimation: "left-to-right",
         text: "Emerging from Snakebite Pass, they beheld a broad valley, its meadows fair and its fields tilled with care, stretching afore them."
     },
     {
         slideNumber: 74,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 875,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene74_white_dragon_fort_in_distance.jpeg",
+        panAnimation: "left-to-right",
         text: "Upon a low hill in the distance rose White Dragon Fort, its sturdy walls a sentinel over the land, flanked by a canyon where the river Nyx flowed with quiet might."
     },
     {
         slideNumber: 75,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 887,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene75_road_to_fort.jpeg",
+        panAnimation: "left-to-right",
         text: "The road grew smooth and well-kept, dotted with houses where folk labored in the soil."
     },
     {
         slideNumber: 76,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 894,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene76_white_dragon_fort_walls.jpeg",
+        panAnimation: "left-to-right",
         text: "The fort itself, though not vast, was wrought for defense, its walls soaring more than ten meters high and two meters thick, gleaming in impeccable order."
     },
     {
         slideNumber: 77,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 906,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene77_white_dragon_fort_reliefs.jpeg",
+        panAnimation: "left-to-right",
         text: "Carven upon them were delicate reliefs, scenes that seemed to depict a coronation of old. Guards stood vigilant at the gate and atop the ramparts, their eyes sharp."
     },
     {
         slideNumber: 78,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 919,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene78_deean_announces_dargon.jpeg",
         panAnimation: "top-to-bottom",
         text: "Deean stepped forth, her voice ringing clear as she proclaimed the coming of the count’s son. One guard hastened within, while the others bade the company enter with courteous welcome."
     },
@@ -628,23 +628,23 @@ window.storyScenes = [
         slideNumber: 79,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 933,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene79_count_zoltran.jpeg",
+        panAnimation: "left-to-right",
         text: "Ere long, a tall figure emerged, his hair grey as winter frost, his armor bearing the imperial emblem—Count Zoltran, striding through a gathering throng."
     },
     {
         slideNumber: 80,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 945,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene80_crowd_dargon_count_zoltran.jpeg",
+        panAnimation: "left-to-right",
         text: "Father and son gazed upon one another for a fleeting moment, then Dargon rushed forward, and they embraced, tears welling in their eyes as Zoltran whispered words lost to the wind."
     },
     {
         slideNumber: 81,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 959,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene81_dargon_count_zoltran.jpeg",
         panAnimation: "top-to-bottom",
         text: "They clung thus for a time, bound by blood and years apart."
     },
@@ -652,47 +652,47 @@ window.storyScenes = [
         slideNumber: 82,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 964,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene82_cowena.jpeg",
+        panAnimation: "left-to-right",
         text: "Beside the count stood Cowena, High Priestess of the fort, a plump woman with braided hair and a smile broad as the dawn, clad in the robes of the Imperial Cult."
     },
     {
         slideNumber: 83,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 976,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene83_deean_cowena.jpeg",
+        panAnimation: "left-to-right",
         text: "She joined Deean at once, their voices mingling in earnest discourse."
     },
     {
         slideNumber: 84,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 981,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene84_crowd_cheering.jpeg",
+        panAnimation: "left-to-right",
         text: "After a brief span, Zoltran raised Dargon’s hand aloft, presenting him to the gathered folk, who erupted in cheers and jubilation, their voices a tide of joy."
     },
     {
         slideNumber: 85,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 993,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene85_count_zoltran_thanks_company.jpeg",
+        panAnimation: "left-to-right",
         text: "Then the count turned to Ambrosius, Bors, Evelyn, and Ivan, offering thanks to each in turn with grave courtesy."
     },
     {
         slideNumber: 86,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1002,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene86_count_zoltran_summons_cowena_deean.jpeg",
+        panAnimation: "left-to-right",
         text: "He summoned Cowena and Deean to his side, bidding them to ensure the company’s comfort and inviting them as honored guests to the night’s festivities."
     },
     {
         slideNumber: 87,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1013,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene87_gerrick_guides_company.jpeg",
         panAnimation: "top-to-bottom",
         text: "A place of rest was granted to them, and Gerrick, a veteran soldier of grizzled years, guided them through the fort’s halls."
     },
@@ -700,16 +700,16 @@ window.storyScenes = [
         slideNumber: 88,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1022,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene88_cowena_gives_healing_draughts.jpeg",
+        panAnimation: "left-to-right",
         text: "At the temple, Cowena bestowed upon them vials of healing draughts and a purse of coin, payment for their perilous service."
     },
     {
         slideNumber: 89,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1031,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene89_company_explores_fort.jpeg",
+        panAnimation: "left-to-right",
         text: "Thereafter, the company scattered to explore—some to the library’s ancient tomes, others to the tavern’s cheer or the shops’ wares."
     },
     {
@@ -958,7 +958,7 @@ window.storyScenes = [
         startTime: 1398,
         image: "assets/images/Bors.png",
         panAnimation: "top-to-bottom",
-        text: "The Impostor Ere long, reports of goblinoid stirrings roused the fort, and the company, now trusted for their prowess, was sent to seek the truth."
+        text: "The Impostor<br><br>Ere long, reports of goblinoid stirrings roused the fort, and the company, now trusted for their prowess, was sent to seek the truth."
     },
     {
         slideNumber: 121,
