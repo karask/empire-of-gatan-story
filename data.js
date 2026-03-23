@@ -716,7 +716,7 @@ window.storyScenes = [
         slideNumber: 90,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1041,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene90_white_dragon_fort_first_night.jpeg",
         panAnimation: "top-to-bottom",
         text: "The White Dragon Fort: The First Night The celebration that night was modest in scale yet grand in spirit, a marvel for so remote a hold."
     },
@@ -724,7 +724,7 @@ window.storyScenes = [
         slideNumber: 91,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1051,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene91_feast_hall.jpeg",
         panAnimation: "top-to-bottom",
         text: "The tables groaned with fare of every kind, and a bard’s voice soared, weaving tales in song."
     },
@@ -732,32 +732,32 @@ window.storyScenes = [
         slideNumber: 92,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1058,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene92_company_meets_miller_martin_longbow.jpeg",
+        panAnimation: "left-to-right",
         text: "The folk made merry, and the company met many a soul: Miller, captain of the guard, stern and stalwart; Martin Longbow, the fort’s chief scout, swift and silent; and sundry shopkeepers of honest trade."
     },
     {
         slideNumber: 93,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1073,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene93_bors_presents_title_to_count.jpeg",
         panAnimation: "top-to-bottom",
-        text: "Bors, seizing the moment, presented to the count a title of land, earned through years of service in the Imperial Army, its parchment signed by GeneralKael Stormblade himself, granting him a demesne nigh the fort."
+        text: "Bors, seizing the moment, presented to the count a title of land, earned through years of service in the Imperial Army, its parchment signed by General Kael Stormblade himself, granting him a demesne nigh the fort."
     },
     {
         slideNumber: 94,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1089,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene94_count_zoltran_promises_to_honor_title.jpeg",
+        panAnimation: "left-to-right",
         text: "Zoltran, with a nod of solemn promise, vowed to honor it swiftly. All seemed well until a foul stench crept into the hall, like rotten cabbages or rusted iron, growing ever stronger."
     },
     {
         slideNumber: 95,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1103,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene95_earth_trembles.jpeg",
+        panAnimation: "left-to-right",
         text: "Then the earth trembled beneath their feet, a low rumble that stirred the heart to dread."
     },
     {
