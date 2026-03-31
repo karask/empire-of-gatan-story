@@ -764,31 +764,31 @@ window.storyScenes = [
         slideNumber: 96,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1110,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene96_revelers_rush_beyond_walls.jpeg",
+        panAnimation: "left-to-right",
         text: "The revelers leapt up, rushing beyond the walls to behold the cause, some crying out as the quaking grew fierce."
     },
     {
         slideNumber: 97,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1119,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene97_blinding_light_strikes_black_dragon_fort.jpeg",
+        panAnimation: "right-to-left",
         text: "Outside, they saw a blinding light, a spear of radiance joining earth and sky, its root striking where Black Dragon Fort stood—the twin hold across the river Nyx, now claimed by the Burning Heart Horde."
     },
     {
         slideNumber: 98,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1134,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene98_an_omen_dark_and_dire.jpeg",
+        panAnimation: "left-to-right",
         text: "Though distant it seemed, its nearness chilled their blood, an omen dark and dire."
     },
     {
         slideNumber: 99,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1140,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene99_the_white_dragon_fort_the_next_weeks.jpeg",
         panAnimation: "top-to-bottom",
         text: "The White Dragon Fort: The Next Weeks The shadow of that night lingered, a weight upon the fort’s folk come morn."
     },
@@ -796,7 +796,7 @@ window.storyScenes = [
         slideNumber: 100,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1149,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene100_no_further_sign_came.jpeg",
         panAnimation: "top-to-bottom",
         text: "No further sign came, yet unease gnawed at all, for tidings from Black Dragon Fort were ever ill."
     },
