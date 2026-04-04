@@ -804,7 +804,7 @@ window.storyScenes = [
         slideNumber: 101,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1156,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene101_company_joins_fort_life.jpeg",
         panAnimation: "top-to-bottom",
         text: "The company wove themselves into the fort’s life, joining patrols along its bounds, learning the craft of its defenses, and hearing tales of recent assaults."
     },
@@ -812,23 +812,23 @@ window.storyScenes = [
         slideNumber: 102,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1168,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene102_zoltran_told_of_sir_lodas_vanishing.jpeg",
+        panAnimation: "left-to-right",
         text: "Zoltran was told of Sir Lodas’s vanishing, and with the count’s wisdom and the testimony of others, they deemed him an impostor, his visage and tale unlike the true knights of Thrum known to the fort."
     },
     {
         slideNumber: 103,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1183,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene103_other_deeds_marked_those_days.jpeg",
+        panAnimation: "left-to-right",
         text: "Other deeds marked those days, weaving a tapestry of toil and trial within the walls of White Dragon Fort."
     },
     {
         slideNumber: 104,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1191,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene104_ambrosius_delves_into_mysteries.jpeg",
         panAnimation: "top-to-bottom",
         text: "Ambrosius, sage of subtle craft, lingered oft within the temple’s library, its ancient shelves laden with tomes of forgotten lore."
     },
@@ -836,16 +836,16 @@ window.storyScenes = [
         slideNumber: 105,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1201,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene105_ambrosius_delves_into_mysteries.jpeg",
+        panAnimation: "right-to-left",
         text: "There he delved deep into the mysteries of the arcane, guided by Deean, whose wisdom flowed like a wellspring, clear and boundless, feeding his eager mind with secrets of power and light."
     },
     {
         slideNumber: 106,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1215,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/TODO:scene106_ambrosius_delves_into_mysteries.jpeg",
+        panAnimation: "left-to-right",
         text: "Long hours they spent in discourse, the flickering candles casting shadows upon parchments old, as Ambrosius sought to plumb the depths of knowledge that she, an Imperial Wizard, held in her keeping."
     },
     {
