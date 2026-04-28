@@ -844,7 +844,7 @@ window.storyScenes = [
         slideNumber: 106,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1215,
-        image: "assets/images/TODO:scene106_ambrosius_delves_into_mysteries.jpeg",
+        image: "assets/images/scene106_ambrosius_and_deean_study.jpeg",
         panAnimation: "left-to-right",
         text: "Long hours they spent in discourse, the flickering candles casting shadows upon parchments old, as Ambrosius sought to plumb the depths of knowledge that she, an Imperial Wizard, held in her keeping."
     },
@@ -852,96 +852,96 @@ window.storyScenes = [
         slideNumber: 107,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1230,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene107_evelyn_and_martin_scout.jpeg",
+        panAnimation: "left-to-right",
         text: "Evelyn Greenvale, huntress of the wilds, roamed far afield with Martin Longbow, the fort’s chief scout, whose tread was silent as the wind upon the grass."
     },
     {
         slideNumber: 108,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1242,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene108_evelyn_and_martin_scout.jpeg",
+        panAnimation: "left-to-right",
         text: "Together they mastered the art of reading the land about the fort, her senses sharpened to its every whisper—the rustle of leaves, the faint track of beast or foe, the murmur of streams beneath the earth."
     },
     {
         slideNumber: 109,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1258,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene109_evelyn_and_martin_scout.jpeg",
+        panAnimation: "left-to-right",
         text: "Through wooded vale and windswept hill she honed her craft, her eyes keen as the hawk’s, learning the secrets of the wilds from one whose life had been spent in their embrace."
     },
     {
         slideNumber: 110,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1271,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene110_bors_ivan_training.jpeg",
+        panAnimation: "left-to-right",
         text: "Bors and Ivan, warriors of iron will, bent their days to the clangor of steel, training beneath the stern eye of Captain Miller, a soldier seasoned by countless campaigns."
     },
     {
         slideNumber: 111,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1284,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene111_bors_ivan_training.jpeg",
+        panAnimation: "left-to-right",
         text: "Their blades met in a martial dance, ringing with the song of war, as Miller’s weathered hand honed their skill to a razor’s edge."
     },
     {
         slideNumber: 112,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1294,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene112_bors_ivan_training.jpeg",
+        panAnimation: "left-to-right",
         text: "Each clash of sword and shield was a lesson wrought in sweat and strength, their prowess growing ever sharper under his tutelage, a testament to the fort’s unyielding resolve."
     },
     {
         slideNumber: 113,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1307,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene113_dargon_ventures_forth.jpeg",
+        panAnimation: "left-to-right",
         text: "Dargon, son of Zoltran, ventured forth on perilous missions beside Miller and Martin, his youthful spirit tempered anew in the crucible of battle’s fire."
     },
     {
         slideNumber: 114,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1319,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene114_dargon_ventures_forth.jpeg",
+        panAnimation: "left-to-right",
         text: "Oft he returned bearing the marks of strife—wounds etched upon his flesh, his frame weary yet unbowed, his once-boundless zeal now forged into a steady determination."
     },
     {
         slideNumber: 115,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1332,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene115_dargon_ventures_forth.jpeg",
+        panAnimation: "left-to-right",
         text: "Through trial and blood he was sculpted, emerging as a leader worthy of men’s fealty, his heart resolute, his eyes fixed upon a horizon of duty and honor, a transformation borne of the wilds and the blade."
     },
     {
         slideNumber: 116,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1348,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene116_snakebite_pass_sealed.jpeg",
+        panAnimation: "left-to-right",
         text: "Yet shadowed tidings came to mar their labors: word reached the fort that the pass through Snakebite Pass remained sealed by the restless dead of Hilltop, their spectral wrath barring the flow of supplies so direly needed."
     },
     {
         slideNumber: 117,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1365,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene117_snakebite_pass_sealed.jpeg",
+        panAnimation: "left-to-right",
         text: "The wagons faltered, unable to breach the veil of spirits, leaving the fort’s stores to dwindle, a silent threat amid their vigilance."
     },
     {
         slideNumber: 118,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1375,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene118_deean_departs.jpeg",
+        panAnimation: "left-to-right",
         text: "And in those days, Deean departed northward on an errand cloaked in urgency, her purpose veiled from all save her own counsel."
     },
     {
