@@ -948,7 +948,7 @@ window.storyScenes = [
         slideNumber: 119,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1385,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene119_deean_departs.jpeg",
         panAnimation: "top-to-bottom",
         text: "Pressing was her need, and she left the company to their tasks, her absence a quiet void amidst the fort’s ceaseless watch, her path bent toward mysteries yet unrevealed."
     },
@@ -956,31 +956,31 @@ window.storyScenes = [
         slideNumber: 120,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1398,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene120_impostor_goblinoid_stirrings.jpeg",
+        panAnimation: "left-to-right",
         text: "The Impostor<br><br>Ere long, reports of goblinoid stirrings roused the fort, and the company, now trusted for their prowess, was sent to seek the truth."
     },
     {
         slideNumber: 121,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1409,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene121_impostor_goblinoid_stirrings.jpeg",
+        panAnimation: "left-to-right",
         text: "After hours amid the woods, they came upon ruins old and crumbling, where a troll loomed in the distance. The battle that ensued was fierce and swift."
     },
     {
         slideNumber: 122,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1420,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene122_troll_killed_by_evelyn.jpeg",
+        panAnimation: "left-to-right",
         text: "Evelyn, with an arrow loosed from her bow, felled the beast with a single shot to its brow, a marvel of marksmanship."
     },
     {
         slideNumber: 123,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1429,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene123_goblins_charge.jpeg",
         panAnimation: "top-to-bottom",
         text: "Goblins charged from the shadows, yet Bors and Ivan dispatched them with ease, their blades a whirlwind of death."
     },
@@ -988,8 +988,8 @@ window.storyScenes = [
         slideNumber: 124,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1438,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene124_troll_rises_again.jpeg",
+        panAnimation: "left-to-right",
         text: "All seemed in hand until the troll rose anew, its wounds knit by dark craft, and a shaman emerged with more goblins at its call."
     },
     {
