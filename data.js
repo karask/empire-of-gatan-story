@@ -996,7 +996,7 @@ window.storyScenes = [
         slideNumber: 125,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1448,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene125_the_impostor_appears.jpeg",
         panAnimation: "top-to-bottom",
         text: "Then strode forth the false Sir Lodas, his treachery laid bare as he struck at the company."
     },
@@ -1004,15 +1004,15 @@ window.storyScenes = [
         slideNumber: 126,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1455,
-        image: "assets/images/Bors.png",
-        panAnimation: "top-to-bottom",
+        image: "assets/images/scene126_goblins_and_shaman_falls.jpeg",
+        panAnimation: "left-to-right",
         text: "Swiftly they slew the shaman, ending its fell rites, and Ivan clove the troll once more, its body burned to ash by Ambrosius’s torch."
     },
     {
         slideNumber: 127,
         audioSrc: "TheChroniclesOfGatan-Audio.mp3",
         startTime: 1465,
-        image: "assets/images/Bors.png",
+        image: "assets/images/scene127_bors_fights_impostor.jpeg",
         panAnimation: "top-to-bottom",
         text: "Bors met the impostor blade to blade, their shields ringing with each clash, until at last the traitor fell, bound in chains and led back to White Dragon Fort, a prisoner of their valor."
     },
