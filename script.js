@@ -5,17 +5,22 @@ class StoryComic {
         this.textContainer = document.getElementById('scene-text');
         this.indicator = document.getElementById('scene-indicator');
         this.progressBar = document.getElementById('progress-bar-fill');
+        this.chapterNav = document.getElementById('chapter-nav');
         this.btnPrev = document.getElementById('btn-prev');
         this.btnNext = document.getElementById('btn-next');
 
         this.currentSceneIndex = -1;
         this.scenes = window.storyScenes || [];
+        this.chapters = window.storyChapters || [];
         this.currentAudioSrc = "";
-        // Keep track of our virtual "timeline" time, useful for silent segments.
-        this.virtualTimer = null;
         this.pendingSceneIndex = null;
         this.transitionTimeout = null;
         this.fadeTimeout = null;
+        this.pendingSeekTime = null;
+        this.availableChapterIds = new Set(['introduction', 'chapter-1']);
+        this.endCardSceneIndex = this.scenes.findIndex((scene) => !this.isSceneAvailable(scene));
+        this.fadeDurationMs = 800;
+        this.fadeLeadSeconds = this.fadeDurationMs / 1000;
 
         this.init();
     }
@@ -26,15 +31,16 @@ class StoryComic {
             return;
         }
 
-        // Setup event listeners
+        this.renderChapterNav();
+
         this.audio.addEventListener('timeupdate', () => this.handleTimeUpdate());
         this.audio.addEventListener('ended', () => this.handleAudioEnded());
         this.audio.addEventListener('play', () => this.handleAudioPlay());
         this.audio.addEventListener('pause', () => this.handleAudioPause());
+        this.audio.addEventListener('loadedmetadata', () => this.handleLoadedMetadata());
         this.btnNext.addEventListener('click', () => this.goToNextScene());
         this.btnPrev.addEventListener('click', () => this.goToPrevScene());
 
-        // Check URL for a specific slide number (e.g. #slide-5 or #5)
         let startIndex = 0;
         const hash = window.location.hash;
         if (hash) {
@@ -47,72 +53,102 @@ class StoryComic {
             }
         }
 
-        // Initialize requested scene silently.
-        this.transitionToScene(startIndex, false);
+        if (!this.isSceneAvailable(this.scenes[startIndex])) {
+            this.renderEndCard();
+            return;
+        }
+
+        this.transitionToScene(startIndex, { smoothFade: false, forceSeek: true });
+    }
+
+    renderChapterNav() {
+        if (!this.chapterNav || this.chapters.length === 0) return;
+
+        this.chapterNav.innerHTML = "";
+        for (const chapter of this.chapters) {
+            const isAvailable = this.isChapterAvailable(chapter);
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = `chapter-tab${isAvailable ? '' : ' unavailable'}`;
+            button.dataset.chapterId = chapter.id;
+            button.textContent = chapter.title;
+            button.setAttribute('aria-disabled', String(!isAvailable));
+
+            if (isAvailable) {
+                button.addEventListener('click', () => {
+                    const firstSceneIndex = this.scenes.findIndex((scene) => scene.slideNumber === chapter.firstSlide);
+                    if (firstSceneIndex >= 0) {
+                        this.transitionToScene(firstSceneIndex, { smoothFade: true, forceSeek: true, autoPlay: true });
+                    }
+                });
+            }
+
+            this.chapterNav.appendChild(button);
+        }
     }
 
     handleAudioPlay() {
         this.image.style.animationPlayState = 'running';
-        const scene = this.scenes[this.currentSceneIndex];
-        // If we are playing a "blank" track scene, start the virtual timer
-        if (scene.endTime) {
-            this.startVirtualTimer();
-        }
     }
 
     handleAudioPause() {
         this.image.style.animationPlayState = 'paused';
-        this.stopVirtualTimer();
     }
 
     handleAudioEnded() {
-        const scene = this.scenes[this.currentSceneIndex];
-        // If the audio track itself actually finishes, go next.
-        if (this.currentSceneIndex < this.scenes.length - 1 && !scene.endTime) {
-            this.goToNextScene();
+        const currentChapter = this.getChapterForScene(this.scenes[this.currentSceneIndex]);
+        if (!currentChapter) return;
+
+        const currentChapterIndex = this.chapters.findIndex((chapter) => chapter.id === currentChapter.id);
+        const nextChapter = this.chapters[currentChapterIndex + 1];
+        if (!nextChapter || !this.isChapterAvailable(nextChapter)) {
+            this.renderEndCard();
+            return;
+        }
+
+        const nextSceneIndex = this.scenes.findIndex((scene) => scene.slideNumber === nextChapter.firstSlide);
+        if (nextSceneIndex >= 0) {
+            this.transitionToScene(nextSceneIndex, { smoothFade: true, forceSeek: true, autoPlay: true });
         }
     }
 
-    startVirtualTimer() {
-        this.stopVirtualTimer();
-        this.virtualTimer = setInterval(() => {
-            const scene = this.scenes[this.currentSceneIndex];
-            if (scene.endTime && this.audio.currentTime >= scene.endTime) {
-                this.goToNextScene();
-            }
-        }, 100);
-    }
-
-    stopVirtualTimer() {
-        if (this.virtualTimer) {
-            clearInterval(this.virtualTimer);
-            this.virtualTimer = null;
-        }
+    handleLoadedMetadata() {
+        if (this.pendingSeekTime === null) return;
+        this.audio.currentTime = this.pendingSeekTime;
+        this.pendingSeekTime = null;
     }
 
     handleTimeUpdate() {
+        if (this.currentSceneIndex < 0) return;
+
         const currentTime = this.audio.currentTime;
         const currentScene = this.scenes[this.currentSceneIndex];
+        const nextScene = this.scenes[this.currentSceneIndex + 1];
+        if (!nextScene || nextScene.audioSrc !== currentScene.audioSrc) return;
+        if (!this.isSceneAvailable(nextScene)) return;
+        if (nextScene.syncStatus === 'unmatched') return;
 
-        // Ensure we don't accidentally skip to a different audio file's timestamp
-        let nextSceneIndex = this.currentSceneIndex;
-
-        // If we are in the main story track
-        if (!currentScene.endTime && this.currentSceneIndex < this.scenes.length - 1) {
-            const nextScene = this.scenes[this.currentSceneIndex + 1];
-            // If the next scene has the same audiotrack and we passed its trigger time
-            if (nextScene.audioSrc === currentScene.audioSrc && currentTime >= nextScene.startTime) {
-                nextSceneIndex = this.currentSceneIndex + 1;
-            }
-        }
-
-        if (nextSceneIndex !== this.currentSceneIndex) {
-            this.transitionToScene(nextSceneIndex);
+        if (currentTime >= nextScene.startTime - this.fadeLeadSeconds) {
+            this.transitionToScene(this.currentSceneIndex + 1, {
+                smoothFade: true,
+                forceSeek: false,
+                autoPlay: !this.audio.paused,
+            });
         }
     }
 
-    transitionToScene(index, smoothFade = true) {
+    transitionToScene(index, options = {}) {
+        const settings = {
+            smoothFade: options.smoothFade !== false,
+            forceSeek: options.forceSeek === true,
+            autoPlay: options.autoPlay,
+        };
+
         if (index < 0 || index >= this.scenes.length) return;
+        if (!this.isSceneAvailable(this.scenes[index])) {
+            this.renderEndCard();
+            return;
+        }
         if (this.pendingSceneIndex === index || (this.pendingSceneIndex === null && this.currentSceneIndex === index)) return;
 
         this.pendingSceneIndex = index;
@@ -120,21 +156,22 @@ class StoryComic {
         if (this.transitionTimeout) clearTimeout(this.transitionTimeout);
         if (this.fadeTimeout) clearTimeout(this.fadeTimeout);
 
-        const previousAudioState = !this.audio.paused;
+        const wasPlaying = !this.audio.paused;
+        const shouldAutoPlay = settings.autoPlay !== undefined ? settings.autoPlay : wasPlaying;
 
-        if (smoothFade) {
+        if (settings.smoothFade) {
             this.image.classList.add('fade-out');
             this.textContainer.classList.add('fade-out');
 
             this.transitionTimeout = setTimeout(() => {
-                this.renderScene(index, previousAudioState);
+                this.renderScene(index, { autoPlay: shouldAutoPlay, forceSeek: settings.forceSeek });
                 this.fadeTimeout = setTimeout(() => {
                     this.image.classList.remove('fade-out');
                     this.textContainer.classList.remove('fade-out');
-                }, 100); // Small buffer before fading back in
-            }, 800); // Give it enough time to fade out (matches CSS)
+                }, 100);
+            }, this.fadeDurationMs);
         } else {
-            this.renderScene(index, previousAudioState);
+            this.renderScene(index, { autoPlay: shouldAutoPlay, forceSeek: settings.forceSeek });
         }
     }
 
@@ -148,103 +185,168 @@ class StoryComic {
         }
     }
 
-    renderScene(index, autoPlay = false) {
+    renderScene(index, options = {}) {
         this.currentSceneIndex = index;
         this.pendingSceneIndex = null;
         const scene = this.scenes[index];
-        
-        // Preload upcoming images
+
         this.preloadImages(index);
+        this.ensureAudioSource(scene);
 
-        // Check if we need to swap audio sources
-        if (this.currentAudioSrc !== scene.audioSrc) {
-            this.currentAudioSrc = scene.audioSrc;
-
-            // To prevent errors when swapping audio sources quickly, verify src changed.
-            if (!this.audio.src.includes(scene.audioSrc)) {
-                this.audio.src = scene.audioSrc;
-                this.audio.load();
-            }
+        if (options.forceSeek || this.shouldSeekToScene(scene)) {
+            this.seekToScene(scene);
         }
 
-        // Set the time ONLY if we aren't already naturally progressing through the current track
-        // to prevent stutters. Exception: The start of a timeline clip.
-        if (this.audio.currentTime < scene.startTime || this.audio.currentTime > (scene.startTime + 2) || scene.endTime) {
-            this.audio.currentTime = scene.startTime;
+        if (options.autoPlay) {
+            this.audio.play().catch((error) => console.log("Autoplay prevented.", error));
         }
 
-        if (autoPlay) {
-            this.audio.play().catch(e => console.log("Autoplay prevented.", e));
-        }
-
-        // Update content
         this.image.src = scene.image;
-        // Handle image alignment and panning positioning
         this.image.classList.remove('pan-top-to-bottom', 'pan-bottom-to-top', 'pan-left-to-right', 'pan-right-to-left');
-        void this.image.offsetWidth; // Trigger DOM reflow to restart animations cleanly
+        void this.image.offsetWidth;
 
         if (scene.panAnimation) {
             this.image.classList.add(`pan-${scene.panAnimation}`);
-            this.image.style.objectPosition = ''; // Let animation handle position
+            this.image.style.objectPosition = '';
             this.image.style.animationPlayState = this.audio.paused ? 'paused' : 'running';
         } else if (scene.imagePosition) {
             this.image.style.objectPosition = scene.imagePosition;
         } else {
-            this.image.style.objectPosition = 'center'; // Default
+            this.image.style.objectPosition = 'center';
         }
 
-        if (scene.mirrorImage) {
-            this.image.style.transform = 'scaleX(-1)';
-        } else {
-            this.image.style.transform = '';
-        }
-
-        this.textContainer.scrollTop = 0; // Reset scroll position to top
+        this.image.style.transform = scene.mirrorImage ? 'scaleX(-1)' : '';
+        this.textContainer.scrollTop = 0;
         this.textContainer.innerHTML = scene.text;
 
-        // Update UI info
-        this.indicator.innerText = `Scene ${index + 1} / ${this.scenes.length}`;
+        this.indicator.innerText = `${this.getChapterTitle(scene)} - Scene ${index + 1} / ${this.scenes.length}`;
+        this.updateChapterNav(scene);
 
-        // Update URL hash without flooding history state ONLY if it's currently different
         if (window.location.hash !== `#slide-${index + 1}`) {
             history.replaceState(null, null, `#slide-${index + 1}`);
         }
 
-        // Update progress bar
         const progressPercentage = ((index + 1) / this.scenes.length) * 100;
         this.progressBar.style.width = `${progressPercentage}%`;
     }
 
+    renderEndCard() {
+        if (this.transitionTimeout) clearTimeout(this.transitionTimeout);
+        if (this.fadeTimeout) clearTimeout(this.fadeTimeout);
+
+        this.pendingSceneIndex = null;
+        this.currentSceneIndex = this.endCardSceneIndex >= 0 ? this.endCardSceneIndex : this.scenes.length - 1;
+        this.audio.pause();
+        this.pendingSeekTime = null;
+
+        const endScene = this.scenes[this.currentSceneIndex];
+        if (endScene) {
+            this.image.src = endScene.image;
+        }
+        this.image.classList.remove('fade-out', 'pan-top-to-bottom', 'pan-bottom-to-top', 'pan-left-to-right', 'pan-right-to-left');
+        this.image.style.objectPosition = 'center';
+        this.image.style.animationPlayState = 'paused';
+        this.image.style.transform = '';
+
+        this.textContainer.classList.remove('fade-out');
+        this.textContainer.scrollTop = 0;
+        this.textContainer.innerHTML = 'To be continued ...';
+        this.indicator.innerText = 'To be continued';
+        this.progressBar.style.width = '100%';
+        this.updateChapterNav(null);
+
+        if (window.location.hash !== '#to-be-continued') {
+            history.replaceState(null, null, '#to-be-continued');
+        }
+    }
+
+    ensureAudioSource(scene) {
+        if (this.currentAudioSrc === scene.audioSrc) return;
+
+        this.currentAudioSrc = scene.audioSrc;
+        this.audio.src = scene.audioSrc;
+        this.audio.load();
+    }
+
+    shouldSeekToScene(scene) {
+        if (scene.syncStatus === 'unmatched') return false;
+        return this.audio.currentTime < scene.startTime || this.audio.currentTime > scene.startTime + 2;
+    }
+
+    seekToScene(scene) {
+        if (scene.syncStatus === 'unmatched') return;
+        const targetTime = Math.max(0, scene.startTime);
+        if (this.audio.readyState === 0) {
+            this.pendingSeekTime = targetTime;
+            return;
+        }
+        this.audio.currentTime = targetTime;
+    }
+
+    getChapterForScene(scene) {
+        if (!scene) return null;
+        return this.chapters.find((chapter) => chapter.id === scene.chapterId) || null;
+    }
+
+    getChapterTitle(scene) {
+        return this.getChapterForScene(scene)?.title || 'Story';
+    }
+
+    updateChapterNav(scene) {
+        if (!this.chapterNav) return;
+        for (const button of this.chapterNav.querySelectorAll('.chapter-tab')) {
+            button.classList.toggle('active', scene && button.dataset.chapterId === scene.chapterId);
+        }
+    }
+
     goToNextScene() {
-        let currentIndex = this.pendingSceneIndex !== null ? this.pendingSceneIndex : this.currentSceneIndex;
+        const currentIndex = this.pendingSceneIndex !== null ? this.pendingSceneIndex : this.currentSceneIndex;
         if (currentIndex < this.scenes.length - 1) {
-            const nextScene = this.scenes[currentIndex + 1];
-            // Immediately sync audio to match the fade-out timing of natural transitions
-            if (this.currentAudioSrc === nextScene.audioSrc) {
-                this.audio.currentTime = nextScene.startTime;
+            if (!this.isSceneAvailable(this.scenes[currentIndex + 1])) {
+                this.renderEndCard();
+                return;
             }
-            this.transitionToScene(currentIndex + 1);
+            this.transitionToScene(currentIndex + 1, { smoothFade: true, forceSeek: true, autoPlay: !this.audio.paused });
         }
     }
 
     goToPrevScene() {
-        let currentIndex = this.pendingSceneIndex !== null ? this.pendingSceneIndex : this.currentSceneIndex;
-        if (currentIndex > 0) {
-            // If we're midway through a scene (more than 2 seconds), restart it first
-            const scene = this.scenes[currentIndex];
-            if (this.audio.currentTime > scene.startTime + 2 && !scene.endTime) {
-                this.audio.currentTime = scene.startTime;
-            } else {
-                const prevScene = this.scenes[currentIndex - 1];
-                // Immediately sync audio to match the fade-out timing of natural transitions
-                if (this.currentAudioSrc === prevScene.audioSrc) {
-                    this.audio.currentTime = prevScene.startTime;
-                }
-                this.transitionToScene(currentIndex - 1);
-            }
-        } else {
+        const currentIndex = this.pendingSceneIndex !== null ? this.pendingSceneIndex : this.currentSceneIndex;
+        if (currentIndex <= 0) {
             this.audio.currentTime = 0;
+            return;
         }
+
+        if (!this.isSceneAvailable(this.scenes[currentIndex])) {
+            const previousAvailableIndex = this.findPreviousAvailableSceneIndex(currentIndex);
+            if (previousAvailableIndex >= 0) {
+                this.transitionToScene(previousAvailableIndex, { smoothFade: true, forceSeek: true, autoPlay: false });
+            }
+            return;
+        }
+
+        const scene = this.scenes[currentIndex];
+        if (scene.syncStatus !== 'unmatched' && this.audio.currentTime > scene.startTime + 2) {
+            this.seekToScene(scene);
+            return;
+        }
+
+        this.transitionToScene(currentIndex - 1, { smoothFade: true, forceSeek: true, autoPlay: !this.audio.paused });
+    }
+
+    isChapterAvailable(chapter) {
+        return chapter && this.availableChapterIds.has(chapter.id);
+    }
+
+    isSceneAvailable(scene) {
+        return scene && this.availableChapterIds.has(scene.chapterId);
+    }
+
+    findPreviousAvailableSceneIndex(startIndex) {
+        for (let i = startIndex - 1; i >= 0; i--) {
+            if (this.isSceneAvailable(this.scenes[i])) return i;
+        }
+        return -1;
     }
 }
 
