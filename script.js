@@ -17,7 +17,7 @@ class StoryComic {
         this.transitionTimeout = null;
         this.fadeTimeout = null;
         this.pendingSeekTime = null;
-        this.availableChapterIds = new Set(['introduction', 'chapter-1']);
+        this.availableChapterIds = new Set(['introduction', 'chapter-1', 'chapter-2', 'chapter-3', 'chapter-4']);
         this.endCardSceneIndex = this.scenes.findIndex((scene) => !this.isSceneAvailable(scene));
         this.fadeDurationMs = 800;
         this.fadeLeadSeconds = this.fadeDurationMs / 1000;
@@ -89,13 +89,16 @@ class StoryComic {
 
     handleAudioPlay() {
         this.image.style.animationPlayState = 'running';
+        this.updateNavigationButtons();
     }
 
     handleAudioPause() {
         this.image.style.animationPlayState = 'paused';
+        this.updateNavigationButtons();
     }
 
     handleAudioEnded() {
+        this.updateNavigationButtons();
         const currentChapter = this.getChapterForScene(this.scenes[this.currentSceneIndex]);
         if (!currentChapter) return;
 
@@ -228,6 +231,7 @@ class StoryComic {
 
         const progressPercentage = ((index + 1) / this.scenes.length) * 100;
         this.progressBar.style.width = `${progressPercentage}%`;
+        this.updateNavigationButtons();
     }
 
     renderEndCard() {
@@ -258,6 +262,8 @@ class StoryComic {
         if (window.location.hash !== '#to-be-continued') {
             history.replaceState(null, null, '#to-be-continued');
         }
+
+        this.updateNavigationButtons();
     }
 
     ensureAudioSource(scene) {
@@ -299,7 +305,17 @@ class StoryComic {
         }
     }
 
+    updateNavigationButtons() {
+        const controlsDisabled = !this.audio.paused && !this.audio.ended;
+        this.btnPrev.disabled = controlsDisabled;
+        this.btnNext.disabled = controlsDisabled;
+        this.btnPrev.setAttribute('aria-disabled', String(controlsDisabled));
+        this.btnNext.setAttribute('aria-disabled', String(controlsDisabled));
+    }
+
     goToNextScene() {
+        if (!this.audio.paused && !this.audio.ended) return;
+
         const currentIndex = this.pendingSceneIndex !== null ? this.pendingSceneIndex : this.currentSceneIndex;
         if (currentIndex < this.scenes.length - 1) {
             if (!this.isSceneAvailable(this.scenes[currentIndex + 1])) {
@@ -311,6 +327,8 @@ class StoryComic {
     }
 
     goToPrevScene() {
+        if (!this.audio.paused && !this.audio.ended) return;
+
         const currentIndex = this.pendingSceneIndex !== null ? this.pendingSceneIndex : this.currentSceneIndex;
         if (currentIndex <= 0) {
             this.audio.currentTime = 0;
