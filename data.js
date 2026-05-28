@@ -51,7 +51,7 @@ window.storyScenes = [
         "slideNumber": 1,
         "audioSrc": "assets/audio/introduction.m4a",
         "startTime": 0,
-        "image": "assets/images/scene1_gatan_map.webp",
+        "image": "assets/images/scene1_gatan_map.png",
         "panAnimation": "top-to-bottom",
         "text": "Empire of Gatan: The Burnt One Returns<br><br>“Fair indeed are its pastures, gentle its hills, deep and ancient its forests, and awe-inspiring its mountains. Its people are counted amongst the most civilised, learned, and honourable in all the lands.",
         "chapterId": "introduction"
