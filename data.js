@@ -1194,7 +1194,8 @@ window.storyScenes = [
         "slideNumber": 128,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 0,
-        "image": "assets/images/soon.svg",
+        "image": "assets/images/scene128_cowena_receives_sir_lodas.jpeg",
+        "panAnimation": "top-to-bottom",
         "text": "Chapter Two: The Lost Outpost (late Autumn, 50 AU)<br><br>Of the Promised Land<br>Within the sturdy walls of White Dragon Fort, Priestess Cowena, robed in the sacred vestments of the Imperial Cult, received the impostor knight, bound in chains from the company’s last perilous venture.",
         "chapterId": "chapter-2"
     },
@@ -1202,7 +1203,8 @@ window.storyScenes = [
         "slideNumber": 129,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 18.13,
-        "image": "assets/images/soon.svg",
+        "image": "assets/images/scene129_sir_lodas_into_dungeon.jpeg",
+        "panAnimation": "left-to-right",
         "text": "With solemn voice, she decreed that he be cast into the dungeons below, there to await the coming of an Imperial Inquisitor, an interrogator skilled in the unraveling of shadowed minds.",
         "chapterId": "chapter-2"
     },
@@ -1210,7 +1212,8 @@ window.storyScenes = [
         "slideNumber": 130,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 30.95,
-        "image": "assets/images/soon.svg",
+        "image": "assets/images/scene130_mausoleum_still_closed.jpeg",
+        "panAnimation": "left-to-right",
         "text": "Yet hope for swift justice was dim, for the pass through the Jank Hills remained sealed at the Mausoleum of Hilltop, where restless spirits held sway.",
         "chapterId": "chapter-2"
     },
@@ -1218,7 +1221,8 @@ window.storyScenes = [
         "slideNumber": 131,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 42.02,
-        "image": "assets/images/soon.svg",
+        "image": "assets/images/scene131_mausoleum_blocks_supplies.jpeg",
+        "panAnimation": "left-to-right",
         "text": "Several supply convoys, guarded by stalwart Knights of Thrum, had been turned back, denied passage by the wrathful dead, their wails a barrier none could breach.",
         "chapterId": "chapter-2"
     },
@@ -1226,7 +1230,8 @@ window.storyScenes = [
         "slideNumber": 132,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 54.2,
-        "image": "assets/images/soon.svg",
+        "image": "assets/images/scene132_cowena_and_teir.jpeg",
+        "panAnimation": "top-to-bottom",
         "text": "In this hour of need, Cowena summoned before the company one Granny Teir, a veteran of grizzled years and weathered courage, whose tale was steeped in the blood and fire of days long past.",
         "chapterId": "chapter-2"
     },
@@ -1234,7 +1239,8 @@ window.storyScenes = [
         "slideNumber": 133,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 67.91,
-        "image": "assets/images/soon.svg",
+        "image": "assets/images/scene133_primed_garisson_house.jpeg",
+        "panAnimation": "top-to-bottom",
         "text": "More than three-and-twenty winters ago, Teir had stood among the defenders of Garrison House, an outpost raised as a spearhead of the empire’s ambition to stretch its borders eastward.",
         "chapterId": "chapter-2"
     },
