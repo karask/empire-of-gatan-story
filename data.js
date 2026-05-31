@@ -1248,7 +1248,8 @@ window.storyScenes = [
         "slideNumber": 134,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 80.64,
-        "image": "assets/images/soon.svg",
+        "image": "assets/images/scene134_bear_people_fort.jpeg",
+        "panAnimation": "left-to-right",
         "text": "The wild lands about it were home to barbarian tribes, chief among them the Bear People, who looked upon the outpost with wary eyes, deeming it an intrusion upon their ancient dominion.",
         "chapterId": "chapter-2"
     },
@@ -1256,7 +1257,8 @@ window.storyScenes = [
         "slideNumber": 135,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 93.32,
-        "image": "assets/images/soon.svg",
+        "image": "assets/images/scene135_captain_nerran.jpeg",
+        "panAnimation": "left-to-right",
         "text": "Yet Captain Nerran, the commander of that time, a man of honor and guile, had woven peace through trade and fair words.",
         "chapterId": "chapter-2"
     },
