@@ -1266,7 +1266,7 @@ window.storyScenes = [
         "slideNumber": 136,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 102.2,
-        "image": "assets/images/soon.svg",
+        "image": "assets/images/scene136_bear_gives_axe.jpeg",
         "text": "So great was his worth that the Bear People—or Pelwe, as some named them—bestowed upon him the Spirit of the Bear, a relic of their tribe, an axe of mighty craft given only to a champion proven in valor.",
         "chapterId": "chapter-2"
     },
