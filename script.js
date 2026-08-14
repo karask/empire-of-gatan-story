@@ -40,6 +40,7 @@ class StoryComic {
         this.audio.addEventListener('loadedmetadata', () => this.handleLoadedMetadata());
         this.btnNext.addEventListener('click', () => this.goToNextScene());
         this.btnPrev.addEventListener('click', () => this.goToPrevScene());
+        window.addEventListener('resize', () => this.handleResize());
 
         let startIndex = 0;
         const hash = window.location.hash;
@@ -188,6 +189,60 @@ class StoryComic {
         }
     }
 
+    clearPanClasses() {
+        this.image.classList.remove(
+            'pan-top-to-bottom',
+            'pan-bottom-to-top',
+            'pan-left-to-right',
+            'pan-right-to-left',
+            'pan-vertical',
+            'pan-horizontal',
+        );
+        this.image.style.removeProperty('--pan-half');
+    }
+
+    isVerticalPan(panAnimation) {
+        return panAnimation === 'top-to-bottom' || panAnimation === 'bottom-to-top';
+    }
+
+    // How far the pan travels depends on the image's aspect ratio, which CSS cannot
+    // see, so the distance is measured here and handed to the keyframes as --pan-half.
+    // The orientation class must already be applied and the image loaded, otherwise
+    // offsetHeight/offsetWidth still describe the unsized element.
+    startPan(scene) {
+        const index = this.currentSceneIndex;
+        const vertical = this.isVerticalPan(scene.panAnimation);
+        this.image.classList.add(vertical ? 'pan-vertical' : 'pan-horizontal');
+
+        const begin = () => {
+            if (this.currentSceneIndex !== index) return;
+            this.measurePan(vertical);
+            this.image.classList.add(`pan-${scene.panAnimation}`);
+            this.image.style.animationPlayState = this.audio.paused ? 'paused' : 'running';
+        };
+
+        if (this.image.complete && this.image.naturalWidth) {
+            begin();
+        } else {
+            this.image.addEventListener('load', begin, { once: true });
+        }
+    }
+
+    measurePan(vertical) {
+        const frame = this.image.parentElement;
+        const overflow = vertical
+            ? this.image.offsetHeight - frame.clientHeight
+            : this.image.offsetWidth - frame.clientWidth;
+        this.image.style.setProperty('--pan-half', `${Math.max(0, overflow) / 2}px`);
+    }
+
+    handleResize() {
+        const scene = this.scenes[this.currentSceneIndex];
+        if (!scene || !scene.panAnimation) return;
+        if (!this.image.classList.contains(`pan-${scene.panAnimation}`)) return;
+        this.measurePan(this.isVerticalPan(scene.panAnimation));
+    }
+
     renderScene(index, options = {}) {
         this.currentSceneIndex = index;
         this.pendingSceneIndex = null;
@@ -205,12 +260,11 @@ class StoryComic {
         }
 
         this.image.src = scene.image;
-        this.image.classList.remove('pan-top-to-bottom', 'pan-bottom-to-top', 'pan-left-to-right', 'pan-right-to-left');
+        this.clearPanClasses();
         void this.image.offsetWidth;
 
         if (scene.panAnimation) {
-            this.image.classList.add(`pan-${scene.panAnimation}`);
-            this.image.style.animationPlayState = this.audio.paused ? 'paused' : 'running';
+            this.startPan(scene);
         }
 
         this.textContainer.scrollTop = 0;
@@ -241,7 +295,8 @@ class StoryComic {
         if (endScene) {
             this.image.src = endScene.image;
         }
-        this.image.classList.remove('fade-out', 'pan-top-to-bottom', 'pan-bottom-to-top', 'pan-left-to-right', 'pan-right-to-left');
+        this.image.classList.remove('fade-out');
+        this.clearPanClasses();
         this.image.style.animationPlayState = 'paused';
 
         this.textContainer.classList.remove('fade-out');
