@@ -40,9 +40,15 @@ A chapter only becomes playable once its id is in `availableChapterIds`
 (`script.js`). Scenes in a chapter that is not listed there render the
 "To be continued" end card instead — that is how unfinished chapters are staged.
 
-## Known gap
+## Scene timings
 
-Slides **144–157** carry `"syncStatus": "unmatched"`: the narration for that stretch
-was never matched to a timestamp. The player deliberately skips seeking and
-auto-advance for those scenes, so they only move on manual navigation. Re-running
-the alignment pass over a chapter-2 audio file that covers them would clear it.
+`startTime` is relative to the scene's own `audioSrc`, i.e. the per-chapter file in
+`assets/audio/`. Every scene now has a real timing; nothing carries `syncStatus`.
+To re-sync a chapter after changing its audio or text, see
+`scripts/alignment/README.md`.
+
+If a scene ever does get `"syncStatus": "unmatched"` again, be aware that
+`handleTimeUpdate` (`script.js`) returns early when the *next* scene is unmatched.
+That is a hard stop, not a skip: playback parks on the preceding scene and never
+advances again, for the rest of the story. Slides 144–157 carried that flag and
+dead-ended chapter 2 at slide 143 until their timings were recovered.

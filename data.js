@@ -1336,156 +1336,128 @@ window.storyScenes = [
     {
         "slideNumber": 144,
         "audioSrc": "assets/audio/chapter-2.m4a",
-        "startTime": 322.29,
+        "startTime": 184.97,
         "image": "assets/images/scene144-b-banner-time-bridge-younger-landscape.png",
         "panAnimation": "left-to-right",
         "text": "When Emperor Ilmar the First arose and drove the invaders back, Teir was sent to the capital of Sotan, lauded for her honorable deeds.",
-        "chapterId": "chapter-2",
-        "syncStatus": "unmatched",
-        "legacyStartTime": 1674
+        "chapterId": "chapter-2"
     },
     {
         "slideNumber": 145,
         "audioSrc": "assets/audio/chapter-2.m4a",
-        "startTime": 322.3,
+        "startTime": 194.9,
         "image": "assets/images/scene145-a-reflection-of-garrison-younger-landscape.png",
         "panAnimation": "left-to-right",
         "text": "Yet the memory of Garrison House lingered as a wound unhealed, a burning shame that she had not avenged her fallen kin.",
-        "chapterId": "chapter-2",
-        "syncStatus": "unmatched",
-        "legacyStartTime": 1546.58
+        "chapterId": "chapter-2"
     },
     {
         "slideNumber": 146,
         "audioSrc": "assets/audio/chapter-2.m4a",
-        "startTime": 322.31,
+        "startTime": 203.58,
         "image": "assets/images/scene146-a-return-to-fort-landscape.png",
         "panAnimation": "left-to-right",
         "text": "Six moons past, fate turned her path once more, and she returned to White Dragon Fort as a Sergeant-Scout, seasoned and resolute, seeking a chance to reclaim the honor lost in that dark hour.",
-        "chapterId": "chapter-2",
-        "syncStatus": "unmatched",
-        "legacyStartTime": 1555.27
+        "chapterId": "chapter-2"
     },
     {
         "slideNumber": 147,
         "audioSrc": "assets/audio/chapter-2.m4a",
-        "startTime": 322.32,
+        "startTime": 217.67,
         "image": "assets/images/scene147-d-bell-and-crows-square.png",
         "panAnimation": "top-to-bottom",
         "text": "And so it was that fate smiled upon her, albeit with a grim visage.",
-        "chapterId": "chapter-2",
-        "syncStatus": "unmatched",
-        "legacyStartTime": 1569.36
+        "chapterId": "chapter-2"
     },
     {
         "slideNumber": 148,
         "audioSrc": "assets/audio/chapter-2.m4a",
-        "startTime": 322.33,
+        "startTime": 223.44,
         "image": "assets/images/scene148-d-tracks-and-trophies-square.png",
         "panAnimation": "top-to-bottom",
         "text": "Three nobles of the empire, seeking sport in the wilds, had ventured to Garrison House to camp while hunting great beasts, their trophies destined for the halls of Sotan.",
-        "chapterId": "chapter-2",
-        "syncStatus": "unmatched",
-        "legacyStartTime": 1575.13
+        "chapterId": "chapter-2"
     },
     {
         "slideNumber": 149,
         "audioSrc": "assets/audio/chapter-2.m4a",
-        "startTime": 322.34,
+        "startTime": 234.19,
         "image": "assets/images/scene149-d-divination-basin-square.png",
         "panAnimation": "top-to-bottom",
         "text": "Days ago they vanished, and Cowena, in communion with the Celestial Emperor Maximus, sought divine counsel.",
-        "chapterId": "chapter-2",
-        "syncStatus": "unmatched",
-        "legacyStartTime": 1585.88
+        "chapterId": "chapter-2"
     },
     {
         "slideNumber": 150,
         "audioSrc": "assets/audio/chapter-2.m4a",
-        "startTime": 322.35,
+        "startTime": 241.93,
         "image": "assets/images/scene150-a-vision-and-charge-diptych-landscape.png",
         "panAnimation": "left-to-right",
         "text": "The signs were fell—visions of blood and cries of torment—and thus she charged Teir to seek the truth, calling upon Ambrosius, Bors, Evelyn, and Ivan to lend their strength.",
-        "chapterId": "chapter-2",
-        "syncStatus": "unmatched",
-        "legacyStartTime": 1593.62
+        "chapterId": "chapter-2"
     },
     {
         "slideNumber": 151,
         "audioSrc": "assets/audio/chapter-2.m4a",
-        "startTime": 322.36,
+        "startTime": 255.88,
         "image": "assets/images/scene151-b-relief-briefing-landscape.png",
         "panAnimation": "left-to-right",
         "text": "The outpost, it was noted, stood nigh the land granted to Bors for his service to the empire, a demesne revealed to Cowena by the fort’s Head-Scout.",
-        "chapterId": "chapter-2",
-        "syncStatus": "unmatched",
-        "legacyStartTime": 1607.57
+        "chapterId": "chapter-2"
     },
     {
         "slideNumber": 152,
         "audioSrc": "assets/audio/chapter-2.m4a",
-        "startTime": 322.37,
+        "startTime": 265.64,
         "image": "assets/images/scene152-b-autumn-procession-landscape.png",
         "panAnimation": "left-to-right",
         "text": "She deemed it fitting that Bors should not miss the chance to behold his inheritance, and so the company rode forth, Teir at their head.",
-        "chapterId": "chapter-2",
-        "syncStatus": "unmatched",
-        "legacyStartTime": 1617.34
+        "chapterId": "chapter-2"
     },
     {
         "slideNumber": 153,
         "audioSrc": "assets/audio/chapter-2.m4a",
-        "startTime": 322.38,
+        "startTime": 272.7,
         "image": "assets/images/scene153-c-teir-halt-bors-corrected-square.png",
         "panAnimation": "top-to-bottom",
         "text": "The Garrison House After half a day’s ride through the crisp air of late autumn, when the leaves lay thick and golden upon the earth, they crested a hill, and Teir bade them halt.",
-        "chapterId": "chapter-2",
-        "syncStatus": "unmatched",
-        "legacyStartTime": 1624.4
+        "chapterId": "chapter-2"
     },
     {
         "slideNumber": 154,
         "audioSrc": "assets/audio/chapter-2.m4a",
-        "startTime": 322.39,
+        "startTime": 285.87,
         "image": "assets/images/scene154-a-two-ridges-less-ruined-landscape.png",
         "panAnimation": "left-to-right",
         "text": "Before them, half a league distant upon another rise, stood Garrison House, its broken walls a silhouette against the sky.",
-        "chapterId": "chapter-2",
-        "syncStatus": "unmatched",
-        "legacyStartTime": 1637.57
+        "chapterId": "chapter-2"
     },
     {
         "slideNumber": 155,
         "audioSrc": "assets/audio/chapter-2.m4a",
-        "startTime": 322.4,
+        "startTime": 294.39,
         "image": "assets/images/scene155-a-winding-valley-road-less-ruined-landscape.png",
         "panAnimation": "left-to-right",
         "text": "A dirt road wound down into the small valley betwixt the hills—a valley that was Bors’s own land—and thence up to the outpost’s ruined gate.",
-        "chapterId": "chapter-2",
-        "syncStatus": "unmatched",
-        "legacyStartTime": 1646.09
+        "chapterId": "chapter-2"
     },
     {
         "slideNumber": 156,
         "audioSrc": "assets/audio/chapter-2.m4a",
-        "startTime": 322.41,
+        "startTime": 304.3,
         "image": "assets/images/scene156-c-broken-arch-square.png",
         "panAnimation": "top-to-bottom",
         "text": "As they drew nigh, the rubble of the shattered entrance loomed stark, a testament to the giant’s wrath of old.",
-        "chapterId": "chapter-2",
-        "syncStatus": "unmatched",
-        "legacyStartTime": 1655.97
+        "chapterId": "chapter-2"
     },
     {
         "slideNumber": 157,
         "audioSrc": "assets/audio/chapter-2.m4a",
-        "startTime": 322.42,
+        "startTime": 312.34,
         "image": "assets/images/scene157-d-bors-sees-cross-square.png",
         "panAnimation": "top-to-bottom",
         "text": "Just beyond, a grim sight met their eyes: a cross stood planted in the earth, and upon it hung a man, his fine garments stained with dried blood, his life long fled.",
-        "chapterId": "chapter-2",
-        "syncStatus": "unmatched",
-        "legacyStartTime": 1664.03
+        "chapterId": "chapter-2"
     },
     {
         "slideNumber": 158,
