@@ -438,10 +438,6 @@ audio::-webkit-media-controls-play-button {
     animation: pan-right-to-left 15s linear alternate forwards;
 }
 
-.hidden {
-    display: none !important;
-}
-
 /* Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;

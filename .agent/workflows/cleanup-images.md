@@ -1,11 +1,15 @@
 ---
-description: Move unused images from assets/images to the root images directory
+description: Report images in assets/images that no scene references any more
 ---
 
-This workflow runs a script to clean up unreferenced images in the `assets/images` folder so that it stays organized. Run this to automate moving unused images.
+All scene images live in `assets/images`. This workflow lists the ones that no
+longer appear in `data.js`, `index.html`, `script.js` or `styles.css`, so leftover
+generation drafts do not pile up.
+
+The script only reports — review the list and delete with `git rm` yourself.
 
 // turbo
-1. Run the cleanup script to move unused images to `/images`
+1. List unreferenced images
 ```bash
-node scripts/cleanup_images.js
+node scripts/find_unused_images.js
 ```

@@ -212,13 +212,10 @@ class StoryComic {
             this.image.classList.add(`pan-${scene.panAnimation}`);
             this.image.style.objectPosition = '';
             this.image.style.animationPlayState = this.audio.paused ? 'paused' : 'running';
-        } else if (scene.imagePosition) {
-            this.image.style.objectPosition = scene.imagePosition;
         } else {
             this.image.style.objectPosition = 'center';
         }
 
-        this.image.style.transform = scene.mirrorImage ? 'scaleX(-1)' : '';
         this.textContainer.scrollTop = 0;
         this.textContainer.innerHTML = scene.text;
 
@@ -250,7 +247,6 @@ class StoryComic {
         this.image.classList.remove('fade-out', 'pan-top-to-bottom', 'pan-bottom-to-top', 'pan-left-to-right', 'pan-right-to-left');
         this.image.style.objectPosition = 'center';
         this.image.style.animationPlayState = 'paused';
-        this.image.style.transform = '';
 
         this.textContainer.classList.remove('fade-out');
         this.textContainer.scrollTop = 0;
