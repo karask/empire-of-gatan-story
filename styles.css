@@ -160,11 +160,11 @@ main {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1.5s ease;
-}
-
-.scene-container:hover #scene-image {
-    transform: scale(1.02);
+    /* Promotes the image to its own compositor layer so the pan below runs off
+       the main thread. Only transform is animated, so opacity is the only
+       transition — a transform transition would fight the pan on scene change. */
+    will-change: transform;
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .image-overlay {
@@ -381,14 +381,25 @@ audio::-webkit-media-controls-play-button {
     opacity: 0 !important;
 }
 
-/* Cinematic Panning Animations */
+/* Cinematic Panning Animations.
+
+   These animate `transform` rather than `object-position`. object-position is not
+   a compositable property: every frame repainted the full-size image on the main
+   thread, which stutters badly while later scenes are still downloading. transform
+   is handed to the GPU instead.
+
+   The scale is what creates room to pan — the overflow is clipped by
+   .scene-container. At scale(1.2) there is 10% of slack past each edge, so the
+   ±8% travel stays inside the frame with a little margin. Order matters:
+   `translate3d(...) scale(...)` applies the scale first, which means the
+   percentages are relative to the unscaled element and the maths above holds. */
 @keyframes pan-top-to-bottom {
     0% {
-        object-position: center top;
+        transform: translate3d(0, 8%, 0) scale(1.2);
     }
 
     100% {
-        object-position: center bottom;
+        transform: translate3d(0, -8%, 0) scale(1.2);
     }
 }
 
@@ -398,11 +409,11 @@ audio::-webkit-media-controls-play-button {
 
 @keyframes pan-bottom-to-top {
     0% {
-        object-position: center bottom;
+        transform: translate3d(0, -8%, 0) scale(1.2);
     }
 
     100% {
-        object-position: center top;
+        transform: translate3d(0, 8%, 0) scale(1.2);
     }
 }
 
@@ -412,11 +423,11 @@ audio::-webkit-media-controls-play-button {
 
 @keyframes pan-left-to-right {
     0% {
-        object-position: left center;
+        transform: translate3d(8%, 0, 0) scale(1.2);
     }
 
     100% {
-        object-position: right center;
+        transform: translate3d(-8%, 0, 0) scale(1.2);
     }
 }
 
@@ -426,16 +437,29 @@ audio::-webkit-media-controls-play-button {
 
 @keyframes pan-right-to-left {
     0% {
-        object-position: right center;
+        transform: translate3d(-8%, 0, 0) scale(1.2);
     }
 
     100% {
-        object-position: left center;
+        transform: translate3d(8%, 0, 0) scale(1.2);
     }
 }
 
 .pan-right-to-left {
     animation: pan-right-to-left 15s linear alternate forwards;
+}
+
+/* Readers who ask the OS for less motion get a still frame, held at the
+   midpoint of the pan so the framing still matches the artwork. */
+@media (prefers-reduced-motion: reduce) {
+
+    .pan-top-to-bottom,
+    .pan-bottom-to-top,
+    .pan-left-to-right,
+    .pan-right-to-left {
+        animation: none;
+        transform: scale(1.2);
+    }
 }
 
 /* Scrollbar */
