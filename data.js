@@ -1420,7 +1420,7 @@ window.storyScenes = [
         "startTime": 272.7,
         "image": "assets/images/scene153-cartoonified-v1-square.webp",
         "panAnimation": "top-to-bottom",
-        "text": "Garrison House<br>After half a day’s ride through the crisp air of late autumn, when the leaves lay thick and golden upon the earth, they crested a hill, and Teir bade them halt.",
+        "text": "Garrison House<br><br>After half a day’s ride through the crisp air of late autumn, when the leaves lay thick and golden upon the earth, they crested a hill, and Teir bade them halt.",
         "chapterId": "chapter-2"
     },
     {
@@ -1518,7 +1518,7 @@ window.storyScenes = [
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 379.32,
         "image": "assets/images/scene164-cartoonified-v1-square.webp",
-        "panAnimation": "top-to-bottom",
+        "panAnimation": "bottom-to-top",
         "text": "As they approached, Evelyn’s keen eyes spied a figure perched in a tree nigh the opening—Teagan, the second hunter, hidden there in desperate vigil, seeking a way to free her companions.",
         "chapterId": "chapter-2"
     },
@@ -1572,7 +1572,7 @@ window.storyScenes = [
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 441.43,
         "image": "assets/images/scene170-cartoonified-v1-square.webp",
-        "panAnimation": "top-to-bottom",
+        "panAnimation": "bottom-to-top",
         "text": "Ivan, his blood hot with the empire’s zeal, yearned to purge the outpost of these wild folk—and perchance Teir with them, for her origins stirred his mistrust—but the company, in wisdom, chose parley over steel.",
         "chapterId": "chapter-2"
     },
@@ -1680,7 +1680,7 @@ window.storyScenes = [
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 572.51,
         "image": "assets/images/scene182-cartoonified-v1-square.webp",
-        "panAnimation": "top-to-bottom",
+        "panAnimation": "bottom-to-top",
         "text": "From the well clambered zombies, with strangely preserved forms, a mockery of life, assailing the company with claw and moan. From behind came the skeletons, their bones clattering as they struck.",
         "chapterId": "chapter-2"
     },
@@ -1878,7 +1878,7 @@ window.storyScenes = [
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 0,
         "image": "assets/images/scene204-cartoonified-v1-square.webp",
-        "panAnimation": "top-to-bottom",
+        "panAnimation": "bottom-to-top",
         "text": "Chapter Three: Unresolved Cases (Late Autumn, 50 AU)<br><br>Yet even as the company returned from their triumph at Garrison House, Count Zoltran bore tidings of urgent need that cast a shadow upon their respite.",
         "chapterId": "chapter-3"
     },
@@ -1933,7 +1933,7 @@ window.storyScenes = [
         "startTime": 71.35,
         "image": "assets/images/scene210-cartoonified-v1-landscape.webp",
         "panAnimation": "left-to-right",
-        "text": "Getting to Know Your Friends As they journeyed through the crisp air of late autumn, when the earth lay mantled in fallen leaves and the wind whispered of winter’s approach, the company found time to speak with Dargon and Teir, their companions in this endeavor.",
+        "text": "Getting to Know Your Friends<br><br>As they journeyed through the crisp air of late autumn, when the earth lay mantled in fallen leaves and the wind whispered of winter’s approach, the company found time to speak with Dargon and Teir, their companions in this endeavor.",
         "chapterId": "chapter-3"
     },
     {
@@ -2004,7 +2004,7 @@ window.storyScenes = [
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 161.31,
         "image": "assets/images/scene218-cartoonified-v1-square.webp",
-        "panAnimation": "top-to-bottom",
+        "panAnimation": "bottom-to-top",
         "text": "At length, they spied the source: crows, black as night, wheeled above them, their cries a haunting refrain.",
         "chapterId": "chapter-3"
     },
@@ -2094,7 +2094,7 @@ window.storyScenes = [
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 270.49,
         "image": "assets/images/scene228-cartoonified-v1-square.webp",
-        "panAnimation": "top-to-bottom",
+        "panAnimation": "bottom-to-top",
         "text": "Yet the clamor roused the rest, who advanced warily, the ogre lumbering forth as their shield. The goblin, fleet as shadow, fled once more into the wilds.",
         "chapterId": "chapter-3"
     },
@@ -2148,7 +2148,7 @@ window.storyScenes = [
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 341.12,
         "image": "assets/images/scene234-cartoonified-v1-square.webp",
-        "panAnimation": "top-to-bottom",
+        "panAnimation": "bottom-to-top",
         "text": "Ambrosius’s barrage of stones felled the last orc, yet the ogre endured, its thick flesh shrugging off lesser strikes, save for a few that bit deep—chief among them Ambrosius’s frost-wrought spells, which seared its hide with icy wrath.",
         "chapterId": "chapter-3"
     },
