@@ -79,7 +79,8 @@ class StoryComic {
                 button.addEventListener('click', () => {
                     const firstSceneIndex = this.scenes.findIndex((scene) => scene.slideNumber === chapter.firstSlide);
                     if (firstSceneIndex >= 0) {
-                        this.transitionToScene(firstSceneIndex, { smoothFade: true, forceSeek: true, autoPlay: true });
+                        this.audio.pause();
+                        this.transitionToScene(firstSceneIndex, { smoothFade: true, forceSeek: true, autoPlay: false });
                     }
                 });
             }
