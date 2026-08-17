@@ -1292,7 +1292,7 @@ window.storyScenes = [
         "slideNumber": 139,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 131.61,
-        "image": "assets/images/scene139-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene139-cartoonified-v3-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "These turncoats, joined by a towering giant of the wilds, stormed Garrison House in a tempest of ruin. The giant’s fists sundered the entrance, and the garrison fell swiftly, overwhelmed by numbers and sorcery.",
         "chapterId": "chapter-2"
@@ -1544,7 +1544,7 @@ window.storyScenes = [
         "slideNumber": 167,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 413.55,
-        "image": "assets/images/scene167-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene167-cartoonified-v3-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "There they beheld a small shrine at its center, flanked by crumbling barracks to the left and a stable to the right.",
         "chapterId": "chapter-2"
@@ -1733,7 +1733,7 @@ window.storyScenes = [
         "slideNumber": 188,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 659.5,
-        "image": "assets/images/scene188-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene188-cartoonified-v4-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "Meanwhile, below, Pleaga clove through the zombie captain Nerran with a warrior’s might, and Teir, Evelyn, Ivan, and the Bear People gained the upper hand against the undead host.",
         "chapterId": "chapter-2"
@@ -1796,7 +1796,7 @@ window.storyScenes = [
         "slideNumber": 195,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 736.35,
-        "image": "assets/images/scene195-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene195-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "Ambrosius sought to kindle new bonds, inviting Pleaga and her kin to White Dragon Fort for parley. She vowed to weigh their words and departed with her warband into the wilds.",
         "chapterId": "chapter-2"
@@ -1877,7 +1877,7 @@ window.storyScenes = [
         "slideNumber": 204,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 0,
-        "image": "assets/images/scene204-cartoonified-v1-square.webp",
+        "image": "assets/images/scene204-cartoonified-v3-square.webp",
         "panAnimation": "bottom-to-top",
         "text": "Chapter Three: Unresolved Cases (Late Autumn, 50 AU)<br><br>Yet even as the company returned from their triumph at Garrison House, Count Zoltran bore tidings of urgent need that cast a shadow upon their respite.",
         "chapterId": "chapter-3"
@@ -1913,7 +1913,7 @@ window.storyScenes = [
         "slideNumber": 208,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 50.18,
-        "image": "assets/images/scene208-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene208-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "To this quest were joined Dargon, son of Zoltran, and Granny Teir, the veteran of old wars, their first steps leading back to the goblin caves within Snakebite Pass, whence the plunder had been taken.",
         "chapterId": "chapter-3"
@@ -1922,7 +1922,7 @@ window.storyScenes = [
         "slideNumber": 209,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 64.35,
-        "image": "assets/images/scene209-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene209-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "Ere the sun had fully risen, they set forth, their purpose clear and their hearts steeled for the trials ahead.",
         "chapterId": "chapter-3"
@@ -1931,7 +1931,7 @@ window.storyScenes = [
         "slideNumber": 210,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 71.35,
-        "image": "assets/images/scene210-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene210-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "Getting to Know Your Friends<br><br>As they journeyed through the crisp air of late autumn, when the earth lay mantled in fallen leaves and the wind whispered of winter’s approach, the company found time to speak with Dargon and Teir, their companions in this endeavor.",
         "chapterId": "chapter-3"
@@ -1940,7 +1940,7 @@ window.storyScenes = [
         "slideNumber": 211,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 87.83,
-        "image": "assets/images/scene211-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene211-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "Dargon, though parted from Evelyn and Ivan—his favored kin among the fellowship—burned with eagerness to ride with Bors and Ambrosius.",
         "chapterId": "chapter-3"
@@ -1949,7 +1949,7 @@ window.storyScenes = [
         "slideNumber": 212,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 97.09,
-        "image": "assets/images/scene212-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene212-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "In the scant months since their first meeting, he had grown markedly, his reckless youth tempered by the forge of battle into a seasoned resolve, his spirit now hardened and sure, a transformation wondrous to behold.",
         "chapterId": "chapter-3"
@@ -1958,7 +1958,7 @@ window.storyScenes = [
         "slideNumber": 213,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 111.26,
-        "image": "assets/images/scene213-cartoonified-v1-square.webp",
+        "image": "assets/images/scene213-cartoonified-v2-square.webp",
         "panAnimation": "top-to-bottom",
         "text": "Teir, her voice weathered by years and softened by memory, shared tales of her days at Garrison House, the outpost they had reclaimed but a week past.",
         "chapterId": "chapter-3"
@@ -1967,7 +1967,7 @@ window.storyScenes = [
         "slideNumber": 214,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 121.24,
-        "image": "assets/images/scene214-cartoonified-v1-square.webp",
+        "image": "assets/images/scene214-cartoonified-v2-square.webp",
         "panAnimation": "top-to-bottom",
         "text": "Bors, granted that very stronghold as part of his demesne, spoke of his intent to render it habitable once more, a home to claim amidst the wilds.",
         "chapterId": "chapter-3"
@@ -1976,7 +1976,7 @@ window.storyScenes = [
         "slideNumber": 215,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 131.87,
-        "image": "assets/images/scene215-cartoonified-v1-square.webp",
+        "image": "assets/images/scene215-cartoonified-v2-square.webp",
         "panAnimation": "top-to-bottom",
         "text": "He turned to Teir with an offer: to join him there, her knowledge of the land a boon to its restoration, a task to reclaim both stone and honor.",
         "chapterId": "chapter-3"
@@ -1985,7 +1985,7 @@ window.storyScenes = [
         "slideNumber": 216,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 141.66,
-        "image": "assets/images/scene216-cartoonified-v1-square.webp",
+        "image": "assets/images/scene216-cartoonified-v2-square.webp",
         "panAnimation": "top-to-bottom",
         "text": "With a glad heart, Teir accepted, for she felt a deep bond with the outpost, a duty woven into her soul by the blood of her fallen comrades.",
         "chapterId": "chapter-3"
@@ -1994,7 +1994,7 @@ window.storyScenes = [
         "slideNumber": 217,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 152.17,
-        "image": "assets/images/scene217-cartoonified-v1-square.webp",
+        "image": "assets/images/scene217-cartoonified-v2-square.webp",
         "panAnimation": "top-to-bottom",
         "text": "Yet as they rode, a shadow of unease crept upon Bors and Ambrosius, a sense that eyes unseen watched their every step.",
         "chapterId": "chapter-3"
@@ -2003,7 +2003,7 @@ window.storyScenes = [
         "slideNumber": 218,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 161.31,
-        "image": "assets/images/scene218-cartoonified-v1-square.webp",
+        "image": "assets/images/scene218-cartoonified-v2-square.webp",
         "panAnimation": "bottom-to-top",
         "text": "At length, they spied the source: crows, black as night, wheeled above them, their cries a haunting refrain.",
         "chapterId": "chapter-3"
@@ -2012,7 +2012,7 @@ window.storyScenes = [
         "slideNumber": 219,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 169.82,
-        "image": "assets/images/scene219-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene219-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "Whether these were the same birds that shadowed them aforetime or mere chance kin, they could not say, yet their presence seemed ever to mirror the company’s own, an omen yet unravelled.",
         "chapterId": "chapter-3"
@@ -2021,7 +2021,7 @@ window.storyScenes = [
         "slideNumber": 220,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 181.69,
-        "image": "assets/images/scene220-cartoonified-v1-square.webp",
+        "image": "assets/images/scene220-cartoonified-v2-square.webp",
         "panAnimation": "top-to-bottom",
         "text": "Return to the Goblin Caves At last, they came again unto the goblin caves within Snakebite Pass, its shadowed mouth a familiar maw in the hillside.",
         "chapterId": "chapter-3"
@@ -2030,7 +2030,7 @@ window.storyScenes = [
         "slideNumber": 221,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 194.53,
-        "image": "assets/images/scene221-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene221-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "A wrecked wagon lay splintered nigh the logs that once barred the road, a sign of strife since their last passage, though little else seemed changed—until Bors glimpsed movement atop the hill.",
         "chapterId": "chapter-3"
@@ -2039,7 +2039,7 @@ window.storyScenes = [
         "slideNumber": 222,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 207.96,
-        "image": "assets/images/scene222-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene222-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "Teir, her scout’s eye keenest among them, crept closer to investigate, then signaled Bors with a silent gesture to hold back, danger lurking near.",
         "chapterId": "chapter-3"
@@ -2156,7 +2156,7 @@ window.storyScenes = [
         "slideNumber": 235,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 357.89,
-        "image": "assets/images/scene235-cartoonified-v1-square.webp",
+        "image": "assets/images/scene235-cartoonified-v2-square.webp",
         "panAnimation": "top-to-bottom",
         "text": "Teir, who had met the beast from the first, landed blow upon blow, her agility a dance against its fury.",
         "chapterId": "chapter-3"
@@ -2183,7 +2183,7 @@ window.storyScenes = [
         "slideNumber": 238,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 383.84,
-        "image": "assets/images/scene238-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene238-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "He and Ambrosius raced to Teir’s side, their hands seeking to mend her, but alas, her spirit had fled beyond their reach.",
         "chapterId": "chapter-3"
@@ -2192,7 +2192,7 @@ window.storyScenes = [
         "slideNumber": 239,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 391.79,
-        "image": "assets/images/scene239-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene239-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "Bors, refusing to yield to truth, knelt beside her, shaking her lifeless form, calling her name in vain, unwilling to accept her loss.",
         "chapterId": "chapter-3"
@@ -2318,7 +2318,7 @@ window.storyScenes = [
         "slideNumber": 253,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 527.51,
-        "image": "assets/images/scene253-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene253-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "That night, they gathered to honor Teir with a burial rite.",
         "chapterId": "chapter-3"
@@ -2327,7 +2327,7 @@ window.storyScenes = [
         "slideNumber": 254,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 531.16,
-        "image": "assets/images/scene254-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene254-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "Cowena stood before the assembled folk, her voice recounting Teir’s valor and steadfast devotion, stirring tears among the crowd, for many had known and cherished her.",
         "chapterId": "chapter-3"
@@ -2345,7 +2345,7 @@ window.storyScenes = [
         "slideNumber": 256,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 553.02,
-        "image": "assets/images/scene256-cartoonified-v1-square.webp",
+        "image": "assets/images/scene256-cartoonified-v2-square.webp",
         "panAnimation": "top-to-bottom",
         "text": "Zoltran granted this with a solemn nod, and Bors kept vigil through the night, speaking to her shade or to his own grieving heart, lamenting the bond that fate had denied them time to nurture.",
         "chapterId": "chapter-3"
@@ -2516,7 +2516,7 @@ window.storyScenes = [
         "slideNumber": 275,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 740.75,
-        "image": "assets/images/scene275-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene275-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "A discourse bloomed, Ambrosius asserting he would wield it for good, making righteous choices, while Tom countered with relentless queries—who deems what is right, and for whom? Who holds such judgment?",
         "chapterId": "chapter-3"
@@ -2543,7 +2543,7 @@ window.storyScenes = [
         "slideNumber": 278,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 776.45,
-        "image": "assets/images/scene278-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene278-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "She hastened with Bors and Ambrosius to the dungeons, where she began her questioning of Old Tom. What magics had he wrought? To what purpose? Did he league with the Horde?",
         "chapterId": "chapter-3"
@@ -2570,7 +2570,7 @@ window.storyScenes = [
         "slideNumber": 281,
         "audioSrc": "assets/audio/chapter-4.m4a",
         "startTime": 0,
-        "image": "assets/images/scene281-cartoonified-v1-square.webp",
+        "image": "assets/images/scene281-cartoonified-v2-square.webp",
         "panAnimation": "top-to-bottom",
         "text": "Chapter 4: The Shadow of the Black Dragon (late Autumn, 50 AU)<br><br>Truth Seekers and a Dark Omen",
         "chapterId": "chapter-4"
