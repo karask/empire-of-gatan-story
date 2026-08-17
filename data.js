@@ -1420,7 +1420,7 @@ window.storyScenes = [
         "startTime": 272.7,
         "image": "assets/images/scene153-cartoonified-v1-square.webp",
         "panAnimation": "top-to-bottom",
-        "text": "The Garrison House After half a day’s ride through the crisp air of late autumn, when the leaves lay thick and golden upon the earth, they crested a hill, and Teir bade them halt.",
+        "text": "Garrison House<br>After half a day’s ride through the crisp air of late autumn, when the leaves lay thick and golden upon the earth, they crested a hill, and Teir bade them halt.",
         "chapterId": "chapter-2"
     },
     {
@@ -1455,7 +1455,7 @@ window.storyScenes = [
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 312.34,
         "image": "assets/images/scene157-cartoonified-v1-square.webp",
-        "panAnimation": "top-to-bottom",
+        "panAnimation": "bottom-to-top",
         "text": "Just beyond, a grim sight met their eyes: a cross stood planted in the earth, and upon it hung a man, his fine garments stained with dried blood, his life long fled.",
         "chapterId": "chapter-2"
     },
