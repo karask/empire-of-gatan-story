@@ -2004,7 +2004,7 @@ window.storyScenes = [
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 161.31,
         "image": "assets/images/scene218-cartoonified-v2-square.webp",
-        "panAnimation": "bottom-to-top",
+        "panAnimation": "top-to-bottom",
         "text": "At length, they spied the source: crows, black as night, wheeled above them, their cries a haunting refrain.",
         "chapterId": "chapter-3"
     },
@@ -2023,7 +2023,7 @@ window.storyScenes = [
         "startTime": 181.69,
         "image": "assets/images/scene220-cartoonified-v2-square.webp",
         "panAnimation": "top-to-bottom",
-        "text": "Return to the Goblin Caves At last, they came again unto the goblin caves within Snakebite Pass, its shadowed mouth a familiar maw in the hillside.",
+        "text": "Return to the Goblin Caves<br><br>At last, they came again unto the goblin caves within Snakebite Pass, its shadowed mouth a familiar maw in the hillside.",
         "chapterId": "chapter-3"
     },
     {
@@ -2248,7 +2248,7 @@ window.storyScenes = [
         "startTime": 444.82,
         "image": "assets/images/scene245-cartoonified-v1-square.webp",
         "panAnimation": "top-to-bottom",
-        "text": "Rest in Peace As aforetime, the hundreds—nay, thousands—of spirits encircling the Mausoleum of Hilltop parted like a sea, granting passage to the tomb beneath.",
+        "text": "Rest in Peace<br><br>As aforetime, the hundreds—nay, thousands—of spirits encircling the Mausoleum of Hilltop parted like a sea, granting passage to the tomb beneath.",
         "chapterId": "chapter-3"
     },
     {
@@ -2275,7 +2275,7 @@ window.storyScenes = [
         "startTime": 474.79,
         "image": "assets/images/scene248-cartoonified-v1-square.webp",
         "panAnimation": "top-to-bottom",
-        "text": "More Dead and the Goblin That Escaped Upon their return through the pass, a grim tableau met their eyes: two figures hung from trees, suspended by a single foot, their bodies drenched in blood, flayed in places—a sight",
+        "text": "More Dead and the Goblin That Escaped<br><br>Upon their return through the pass, a grim tableau met their eyes: two figures hung from trees, suspended by a single foot, their bodies drenched in blood, flayed in places—a sight",
         "chapterId": "chapter-3"
     },
     {
@@ -2572,7 +2572,7 @@ window.storyScenes = [
         "startTime": 0,
         "image": "assets/images/scene281-cartoonified-v2-square.webp",
         "panAnimation": "top-to-bottom",
-        "text": "Chapter 4: The Shadow of the Black Dragon (late Autumn, 50 AU)<br><br>Truth Seekers and a Dark Omen",
+        "text": "Chapter 4: The Shadow of the Black Dragon (late Autumn, 50 AU)<br><br>Seekers and a Dark Omen",
         "chapterId": "chapter-4"
     }
 ];
