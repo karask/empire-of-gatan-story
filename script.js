@@ -14,13 +14,22 @@ class StoryComic {
         this.chapters = window.storyChapters || [];
         this.currentAudioSrc = "";
         this.pendingSceneIndex = null;
-        this.transitionTimeout = null;
-        this.fadeTimeout = null;
-        this.pendingSeekTime = null;
+        this.pendingSeek = null;
         this.availableChapterIds = new Set(['introduction', 'chapter-1', 'chapter-2', 'chapter-3', 'chapter-4']);
         this.endCardSceneIndex = this.scenes.findIndex((scene) => !this.isSceneAvailable(scene));
         this.fadeDurationMs = 800;
         this.fadeLeadSeconds = this.fadeDurationMs / 1000;
+        this.imageCache = new Map();
+        this.imageCacheClock = 0;
+        this.maxCachedImages = 14;
+        this.pinnedImageUrls = new Set();
+        this.preloadQueue = [];
+        this.queuedImageUrls = new Set();
+        this.activeBackgroundLoads = 0;
+        this.maxBackgroundLoads = 2;
+        this.transitionToken = 0;
+        this.frameIsFadedOut = false;
+        this.placeholderImageSrc = 'assets/images/soon.svg';
 
         this.init();
     }
@@ -59,7 +68,7 @@ class StoryComic {
             return;
         }
 
-        this.transitionToScene(startIndex, { smoothFade: false, forceSeek: true });
+        this.transitionToScene(startIndex, { smoothFade: false, audioAction: 'seek' });
     }
 
     renderChapterNav() {
@@ -76,11 +85,18 @@ class StoryComic {
             button.setAttribute('aria-disabled', String(!isAvailable));
 
             if (isAvailable) {
+                const firstSceneIndex = this.scenes.findIndex((scene) => scene.slideNumber === chapter.firstSlide);
+                const warmChapterImage = () => {
+                    if (firstSceneIndex < 0) return;
+                    this.promoteImage(this.scenes[firstSceneIndex].image).catch(() => {});
+                };
+                button.addEventListener('pointerenter', warmChapterImage);
+                button.addEventListener('focus', warmChapterImage);
+                button.addEventListener('touchstart', warmChapterImage);
                 button.addEventListener('click', () => {
-                    const firstSceneIndex = this.scenes.findIndex((scene) => scene.slideNumber === chapter.firstSlide);
                     if (firstSceneIndex >= 0) {
                         this.audio.pause();
-                        this.transitionToScene(firstSceneIndex, { smoothFade: true, forceSeek: true, autoPlay: false });
+                        this.transitionToScene(firstSceneIndex, { smoothFade: true, audioAction: 'seek' });
                     }
                 });
             }
@@ -113,40 +129,54 @@ class StoryComic {
 
         const nextSceneIndex = this.scenes.findIndex((scene) => scene.slideNumber === nextChapter.firstSlide);
         if (nextSceneIndex >= 0) {
-            this.transitionToScene(nextSceneIndex, { smoothFade: true, forceSeek: true, autoPlay: true });
+            this.transitionToScene(nextSceneIndex, { smoothFade: true, audioAction: 'seek-and-play' });
         }
     }
 
     handleLoadedMetadata() {
-        if (this.pendingSeekTime === null) return;
-        this.audio.currentTime = this.pendingSeekTime;
-        this.pendingSeekTime = null;
+        const pendingSeek = this.pendingSeek;
+        if (!pendingSeek) return;
+
+        this.pendingSeek = null;
+        if (
+            pendingSeek.audioSrc !== this.currentAudioSrc
+            || pendingSeek.token !== this.transitionToken
+        ) return;
+
+        this.audio.currentTime = pendingSeek.time;
+        if (pendingSeek.playAfterSeek) this.playAudio();
     }
 
     handleTimeUpdate() {
         if (this.currentSceneIndex < 0) return;
 
-        const currentTime = this.audio.currentTime;
         const currentScene = this.scenes[this.currentSceneIndex];
-        const nextScene = this.scenes[this.currentSceneIndex + 1];
-        if (!nextScene || nextScene.audioSrc !== currentScene.audioSrc) return;
-        if (!this.isSceneAvailable(nextScene)) return;
-        if (nextScene.syncStatus === 'unmatched') return;
+        const audioSrc = this.currentAudioSrc || currentScene.audioSrc;
+        const targetIndex = this.findSceneIndexAtTime(audioSrc, this.audio.currentTime + this.fadeLeadSeconds);
+        if (targetIndex < 0 || targetIndex === this.currentSceneIndex || targetIndex === this.pendingSceneIndex) return;
 
-        if (currentTime >= nextScene.startTime - this.fadeLeadSeconds) {
-            this.transitionToScene(this.currentSceneIndex + 1, {
-                smoothFade: true,
-                forceSeek: false,
-                autoPlay: !this.audio.paused,
-            });
-        }
+        this.transitionToScene(targetIndex, {
+            smoothFade: true,
+            audioAction: 'none',
+        });
     }
 
-    transitionToScene(index, options = {}) {
+    findSceneIndexAtTime(audioSrc, time) {
+        let match = -1;
+        for (let index = 0; index < this.scenes.length; index++) {
+            const scene = this.scenes[index];
+            if (scene.audioSrc !== audioSrc) continue;
+            if (!this.isSceneAvailable(scene) || scene.syncStatus === 'unmatched') continue;
+            if (scene.startTime > time) break;
+            match = index;
+        }
+        return match;
+    }
+
+    async transitionToScene(index, options = {}) {
         const settings = {
             smoothFade: options.smoothFade !== false,
-            forceSeek: options.forceSeek === true,
-            autoPlay: options.autoPlay,
+            audioAction: options.audioAction || 'none',
         };
 
         if (index < 0 || index >= this.scenes.length) return;
@@ -156,37 +186,240 @@ class StoryComic {
         }
         if (this.pendingSceneIndex === index || (this.pendingSceneIndex === null && this.currentSceneIndex === index)) return;
 
+        const token = ++this.transitionToken;
         this.pendingSceneIndex = index;
+        this.applyAudioAction(this.scenes[index], settings.audioAction, token);
 
-        if (this.transitionTimeout) clearTimeout(this.transitionTimeout);
-        if (this.fadeTimeout) clearTimeout(this.fadeTimeout);
+        const fadePromise = this.fadeOutFrame(settings.smoothFade, token);
+        const imagePromise = this.promoteImage(this.scenes[index].image).then(
+            () => ({ error: null }),
+            (error) => ({ error }),
+        );
+        await fadePromise;
+        if (token !== this.transitionToken) return;
 
-        const wasPlaying = !this.audio.paused;
-        const shouldAutoPlay = settings.autoPlay !== undefined ? settings.autoPlay : wasPlaying;
+        let imageSrc = this.scenes[index].image;
+        const imageResult = await imagePromise;
+        if (imageResult.error) {
+            console.warn(`Scene image failed to load: ${imageSrc}`, imageResult.error);
+            imageSrc = this.placeholderImageSrc;
+            try {
+                await this.promoteImage(imageSrc);
+            } catch (placeholderError) {
+                console.warn('Scene placeholder failed to load.', placeholderError);
+            }
+        }
+        if (token !== this.transitionToken) return;
 
-        if (settings.smoothFade) {
-            this.image.classList.add('fade-out');
-            this.textContainer.classList.add('fade-out');
+        try {
+            await this.setDisplayImage(imageSrc);
+        } catch (error) {
+            console.warn(`Scene image failed to decode: ${imageSrc}`, error);
+            imageSrc = this.placeholderImageSrc;
+            try {
+                await this.promoteImage(imageSrc);
+                if (token === this.transitionToken) await this.setDisplayImage(imageSrc);
+            } catch (placeholderError) {
+                console.warn('Scene placeholder failed to display.', placeholderError);
+            }
+        }
+        if (token !== this.transitionToken) return;
 
-            this.transitionTimeout = setTimeout(() => {
-                this.renderScene(index, { autoPlay: shouldAutoPlay, forceSeek: settings.forceSeek });
-                this.fadeTimeout = setTimeout(() => {
-                    this.image.classList.remove('fade-out');
-                    this.textContainer.classList.remove('fade-out');
-                }, 100);
-            }, this.fadeDurationMs);
-        } else {
-            this.renderScene(index, { autoPlay: shouldAutoPlay, forceSeek: settings.forceSeek });
+        this.renderScene(index);
+        this.revealFrame();
+    }
+
+    fadeOutFrame(smoothFade, token = this.transitionToken) {
+        this.image.classList.add('fade-out');
+        this.textContainer.classList.add('fade-out');
+        if (!smoothFade || this.frameIsFadedOut) {
+            if (token === this.transitionToken) this.frameIsFadedOut = true;
+            return Promise.resolve();
+        }
+
+        return new Promise((resolve) => {
+            let settled = false;
+            const finish = () => {
+                if (settled) return;
+                settled = true;
+                this.image.removeEventListener('transitionend', handleTransitionEnd);
+                clearTimeout(timeoutId);
+                if (token === this.transitionToken) this.frameIsFadedOut = true;
+                resolve();
+            };
+            const handleTransitionEnd = (event) => {
+                if (event.target === this.image && event.propertyName === 'opacity') finish();
+            };
+            const timeoutId = setTimeout(finish, this.fadeDurationMs + 100);
+            this.image.addEventListener('transitionend', handleTransitionEnd);
+        });
+    }
+
+    revealFrame() {
+        this.image.classList.remove('fade-out');
+        this.textContainer.classList.remove('fade-out');
+        this.frameIsFadedOut = false;
+    }
+
+    async setDisplayImage(src) {
+        this.image.src = src;
+        if (typeof this.image.decode === 'function') {
+            try {
+                await this.image.decode();
+                return;
+            } catch (error) {
+                if (this.image.complete && this.image.naturalWidth) return;
+                throw error;
+            }
+        }
+        if (this.image.complete && this.image.naturalWidth) return;
+        await new Promise((resolve, reject) => {
+            const finish = (callback, value) => {
+                this.image.removeEventListener('load', handleLoad);
+                this.image.removeEventListener('error', handleError);
+                callback(value);
+            };
+            const handleLoad = () => finish(resolve);
+            const handleError = (error) => finish(reject, error);
+            this.image.addEventListener('load', handleLoad);
+            this.image.addEventListener('error', handleError);
+        });
+    }
+
+    preloadAround(index) {
+        this.preloadQueue.length = 0;
+        this.queuedImageUrls.clear();
+
+        const windowIndexes = [index];
+        const queuedIndexes = [];
+        for (let distance = 1; distance <= 5; distance++) {
+            const nextIndex = index + distance;
+            if (nextIndex < this.scenes.length && this.isSceneAvailable(this.scenes[nextIndex])) {
+                windowIndexes.push(nextIndex);
+                queuedIndexes.push(nextIndex);
+            }
+
+            const previousIndex = index - distance;
+            if (distance <= 2 && previousIndex >= 0 && this.isSceneAvailable(this.scenes[previousIndex])) {
+                windowIndexes.push(previousIndex);
+                queuedIndexes.push(previousIndex);
+            }
+        }
+
+        const chapterAnchorIndexes = this.chapters
+            .filter((chapter) => this.isChapterAvailable(chapter))
+            .map((chapter) => this.scenes.findIndex((scene) => scene.slideNumber === chapter.firstSlide))
+            .filter((sceneIndex) => sceneIndex >= 0);
+
+        this.pinnedImageUrls = new Set(
+            [...windowIndexes, ...chapterAnchorIndexes].map((sceneIndex) => this.scenes[sceneIndex].image),
+        );
+
+        const queuedUrls = new Set();
+        for (const sceneIndex of [...queuedIndexes, ...chapterAnchorIndexes]) {
+            const src = this.scenes[sceneIndex].image;
+            if (sceneIndex === index || queuedUrls.has(src)) continue;
+            queuedUrls.add(src);
+            this.queueImagePreload(src);
+        }
+
+        this.evictImageCache();
+    }
+
+    queueImagePreload(src) {
+        if (this.imageCache.has(src) || this.queuedImageUrls.has(src)) return;
+        this.queuedImageUrls.add(src);
+        this.preloadQueue.push(src);
+        this.drainPreloadQueue();
+    }
+
+    drainPreloadQueue() {
+        while (this.activeBackgroundLoads < this.maxBackgroundLoads && this.preloadQueue.length) {
+            const src = this.preloadQueue.shift();
+            this.queuedImageUrls.delete(src);
+            this.activeBackgroundLoads += 1;
+            this.loadImage(src, { priority: 'low' })
+                .catch(() => {})
+                .finally(() => {
+                    this.activeBackgroundLoads -= 1;
+                    this.drainPreloadQueue();
+                });
         }
     }
 
-    preloadImages(startIndex, count = 3) {
-        for (let i = startIndex + 1; i <= startIndex + count && i < this.scenes.length; i++) {
-            const scene = this.scenes[i];
-            if (!scene.preloadedImageObject) {
-                scene.preloadedImageObject = new Image();
-                scene.preloadedImageObject.src = scene.image;
-            }
+    promoteImage(src) {
+        const queuedIndex = this.preloadQueue.indexOf(src);
+        if (queuedIndex >= 0) this.preloadQueue.splice(queuedIndex, 1);
+        this.queuedImageUrls.delete(src);
+        return this.loadImage(src, { priority: 'high' });
+    }
+
+    loadImage(src, { priority = 'low' } = {}) {
+        const existing = this.imageCache.get(src);
+        if (existing) {
+            existing.lastUsed = ++this.imageCacheClock;
+            if (priority === 'high') existing.image.fetchPriority = 'high';
+            return existing.promise;
+        }
+
+        const image = new Image();
+        image.decoding = 'async';
+        image.fetchPriority = priority;
+        const entry = {
+            image,
+            status: 'loading',
+            lastUsed: ++this.imageCacheClock,
+            promise: null,
+        };
+
+        entry.promise = new Promise((resolve, reject) => {
+            let finishing = false;
+
+            const fail = (error) => {
+                if (entry.status !== 'loading') return;
+                entry.status = 'failed';
+                image.onload = null;
+                image.onerror = null;
+                if (this.imageCache.get(src) === entry) this.imageCache.delete(src);
+                reject(error instanceof Error ? error : new Error(`Could not load image: ${src}`));
+            };
+
+            const finish = async () => {
+                if (finishing || entry.status !== 'loading') return;
+                finishing = true;
+                try {
+                    if (typeof image.decode === 'function') await image.decode();
+                } catch (error) {
+                    if (!image.complete || !image.naturalWidth) {
+                        fail(error);
+                        return;
+                    }
+                }
+                entry.status = 'ready';
+                image.onload = null;
+                image.onerror = null;
+                entry.lastUsed = ++this.imageCacheClock;
+                this.evictImageCache();
+                resolve(image);
+            };
+
+            image.onload = finish;
+            image.onerror = fail;
+            image.src = src;
+            if (image.complete && image.naturalWidth) Promise.resolve().then(finish);
+        });
+
+        this.imageCache.set(src, entry);
+        return entry.promise;
+    }
+
+    evictImageCache() {
+        while (this.imageCache.size > this.maxCachedImages) {
+            const candidate = [...this.imageCache.entries()]
+                .filter(([src, entry]) => entry.status === 'ready' && !this.pinnedImageUrls.has(src))
+                .sort((left, right) => left[1].lastUsed - right[1].lastUsed)[0];
+            if (!candidate) return;
+            this.imageCache.delete(candidate[0]);
         }
     }
 
@@ -244,23 +477,12 @@ class StoryComic {
         this.measurePan(this.isVerticalPan(scene.panAnimation));
     }
 
-    renderScene(index, options = {}) {
+    renderScene(index) {
         this.currentSceneIndex = index;
         this.pendingSceneIndex = null;
         const scene = this.scenes[index];
 
-        this.preloadImages(index);
-        this.ensureAudioSource(scene);
-
-        if (options.forceSeek || this.shouldSeekToScene(scene)) {
-            this.seekToScene(scene);
-        }
-
-        if (options.autoPlay) {
-            this.audio.play().catch((error) => console.log("Autoplay prevented.", error));
-        }
-
-        this.image.src = scene.image;
+        this.preloadAround(index);
         this.clearPanClasses();
         void this.image.offsetWidth;
 
@@ -283,24 +505,58 @@ class StoryComic {
         this.updateNavigationButtons();
     }
 
-    renderEndCard() {
-        if (this.transitionTimeout) clearTimeout(this.transitionTimeout);
-        if (this.fadeTimeout) clearTimeout(this.fadeTimeout);
-
+    async renderEndCard() {
+        const token = ++this.transitionToken;
         this.pendingSceneIndex = null;
-        this.currentSceneIndex = this.endCardSceneIndex >= 0 ? this.endCardSceneIndex : this.scenes.length - 1;
         this.audio.pause();
-        this.pendingSeekTime = null;
+        this.pendingSeek = null;
 
-        const endScene = this.scenes[this.currentSceneIndex];
+        const endSceneIndex = this.endCardSceneIndex >= 0 ? this.endCardSceneIndex : this.scenes.length - 1;
+        const endScene = this.scenes[endSceneIndex];
+        const fadePromise = this.fadeOutFrame(true, token);
+        const imagePromise = endScene
+            ? this.promoteImage(endScene.image).then(
+                () => ({ error: null }),
+                (error) => ({ error }),
+            )
+            : Promise.resolve({ error: null });
+
+        await fadePromise;
+        if (token !== this.transitionToken) return;
+
         if (endScene) {
-            this.image.src = endScene.image;
+            let imageSrc = endScene.image;
+            const imageResult = await imagePromise;
+            if (imageResult.error) {
+                console.warn(`End-card image failed to load: ${imageSrc}`, imageResult.error);
+                imageSrc = this.placeholderImageSrc;
+                try {
+                    await this.promoteImage(imageSrc);
+                } catch (placeholderError) {
+                    console.warn('End-card placeholder failed to load.', placeholderError);
+                }
+            }
+            if (token !== this.transitionToken) return;
+
+            try {
+                await this.setDisplayImage(imageSrc);
+            } catch (error) {
+                console.warn(`End-card image failed to decode: ${imageSrc}`, error);
+                imageSrc = this.placeholderImageSrc;
+                try {
+                    await this.promoteImage(imageSrc);
+                    if (token === this.transitionToken) await this.setDisplayImage(imageSrc);
+                } catch (placeholderError) {
+                    console.warn('End-card placeholder failed to display.', placeholderError);
+                }
+            }
+            if (token !== this.transitionToken) return;
         }
-        this.image.classList.remove('fade-out');
+
+        this.currentSceneIndex = endSceneIndex;
         this.clearPanClasses();
         this.image.style.animationPlayState = 'paused';
 
-        this.textContainer.classList.remove('fade-out');
         this.textContainer.scrollTop = 0;
         this.textContainer.innerHTML = 'To be continued ...';
         this.indicator.innerText = 'To be continued';
@@ -311,6 +567,7 @@ class StoryComic {
             history.replaceState(null, null, '#to-be-continued');
         }
 
+        this.revealFrame();
         this.updateNavigationButtons();
     }
 
@@ -322,19 +579,35 @@ class StoryComic {
         this.audio.load();
     }
 
-    shouldSeekToScene(scene) {
-        if (scene.syncStatus === 'unmatched') return false;
-        return this.audio.currentTime < scene.startTime || this.audio.currentTime > scene.startTime + 2;
+    applyAudioAction(scene, action, token) {
+        if (action === 'none') return;
+        this.ensureAudioSource(scene);
+        this.seekToScene(scene, {
+            playAfterSeek: action === 'seek-and-play',
+            token,
+        });
     }
 
-    seekToScene(scene) {
+    playAudio() {
+        this.audio.play().catch((error) => console.log('Autoplay prevented.', error));
+    }
+
+    seekToScene(scene, { playAfterSeek = false, token = this.transitionToken } = {}) {
         if (scene.syncStatus === 'unmatched') return;
         const targetTime = Math.max(0, scene.startTime);
         if (this.audio.readyState === 0) {
-            this.pendingSeekTime = targetTime;
+            this.pendingSeek = {
+                time: targetTime,
+                audioSrc: scene.audioSrc,
+                playAfterSeek,
+                token,
+            };
             return;
         }
+        if (token !== this.transitionToken) return;
         this.audio.currentTime = targetTime;
+        this.pendingSeek = null;
+        if (playAfterSeek) this.playAudio();
     }
 
     getChapterForScene(scene) {
@@ -370,7 +643,7 @@ class StoryComic {
                 this.renderEndCard();
                 return;
             }
-            this.transitionToScene(currentIndex + 1, { smoothFade: true, forceSeek: true, autoPlay: !this.audio.paused });
+            this.transitionToScene(currentIndex + 1, { smoothFade: true, audioAction: 'seek' });
         }
     }
 
@@ -386,7 +659,7 @@ class StoryComic {
         if (!this.isSceneAvailable(this.scenes[currentIndex])) {
             const previousAvailableIndex = this.findPreviousAvailableSceneIndex(currentIndex);
             if (previousAvailableIndex >= 0) {
-                this.transitionToScene(previousAvailableIndex, { smoothFade: true, forceSeek: true, autoPlay: false });
+                this.transitionToScene(previousAvailableIndex, { smoothFade: true, audioAction: 'seek' });
             }
             return;
         }
@@ -397,7 +670,7 @@ class StoryComic {
             return;
         }
 
-        this.transitionToScene(currentIndex - 1, { smoothFade: true, forceSeek: true, autoPlay: !this.audio.paused });
+        this.transitionToScene(currentIndex - 1, { smoothFade: true, audioAction: 'seek' });
     }
 
     isChapterAvailable(chapter) {

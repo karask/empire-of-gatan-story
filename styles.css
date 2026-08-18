@@ -11,6 +11,7 @@
     --text-title: #f5f5dc;
     /* Beige */
     --border-glow: rgba(212, 175, 55, 0.3);
+    --scene-fade-duration: 800ms;
 }
 
 * {
@@ -164,7 +165,7 @@ main {
        the main thread. Only transform is animated, so opacity is the only
        transition — a transform transition would fight the pan on scene change. */
     will-change: transform;
-    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity var(--scene-fade-duration) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* A panning scene sizes the image to its natural aspect along the axis it travels,
@@ -218,7 +219,7 @@ main {
     line-height: 1.7;
     text-align: justify;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-    transition: opacity 0.8s ease;
+    transition: opacity var(--scene-fade-duration) ease;
 }
 
 
