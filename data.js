@@ -1562,7 +1562,7 @@ window.storyScenes = [
         "slideNumber": 169,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 427.04,
-        "image": "assets/images/scene169-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene169-cartoonified-v4-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "South of the shrine paced half a dozen skeleton warriors, their bones rattling in mechanical rhythm, heedless of the intruders. From the stable emerged the barbarians, their stance wary but not yet hostile.",
         "chapterId": "chapter-2"
@@ -1643,7 +1643,7 @@ window.storyScenes = [
         "slideNumber": 178,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 529.83,
-        "image": "assets/images/scene178-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene178-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "Within lay a great well at the tower’s heart, while stairs spiraled upward along the walls.",
         "chapterId": "chapter-2"
@@ -1670,7 +1670,7 @@ window.storyScenes = [
         "slideNumber": 181,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 559.46,
-        "image": "assets/images/scene181-cartoonified-v1-square.webp",
+        "image": "assets/images/scene181-cartoonified-v3-square.webp",
         "panAnimation": "top-to-bottom",
         "text": "The pain seared his flesh, yet he steadied himself, and Ambrosius, with healing hands, restored his strength, urging him onward. Then chaos descended like a storm unleashed.",
         "chapterId": "chapter-2"
