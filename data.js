@@ -1688,7 +1688,7 @@ window.storyScenes = [
         "slideNumber": 183,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 593.74,
-        "image": "assets/images/scene183-cartoonified-v1-square.webp",
+        "image": "assets/images/scene183-cartoonified-v2-square.webp",
         "panAnimation": "top-to-bottom",
         "text": "Captain Nerran himself, their faces nigh unchanged by the passage of three-and-twenty winters. Shock drove her back, her heart torn by memory, yet duty roused her to fight.",
         "chapterId": "chapter-2"
@@ -1697,7 +1697,7 @@ window.storyScenes = [
         "slideNumber": 184,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 605.35,
-        "image": "assets/images/scene184-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene184-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "A mighty battle erupted: Ivan charged Nerran, his blade hungry for retribution; the Bear People met the zombies with fierce cries; Teir guarded their flank, her spear a wall against the skeletons; Evelyn loosed arrows with deadly grace; and Ambrosius followed Bors in pursuit of the necromancer, their steps swift upon the stair.",
         "chapterId": "chapter-2"
@@ -1706,7 +1706,7 @@ window.storyScenes = [
         "slideNumber": 185,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 627.14,
-        "image": "assets/images/scene185-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene185-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "Bors and Ambrosius hunted the wizard to the second floor, yet Gar, cunning and desperate, slipped through a breach in the wall, clambering down to the earth below and fleeing into the forest’s embrace.",
         "chapterId": "chapter-2"
@@ -1733,7 +1733,7 @@ window.storyScenes = [
         "slideNumber": 188,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 659.5,
-        "image": "assets/images/scene188-cartoonified-v4-landscape.webp",
+        "image": "assets/images/scene188-cartoonified-v5-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "Meanwhile, below, Pleaga clove through the zombie captain Nerran with a warrior’s might, and Teir, Evelyn, Ivan, and the Bear People gained the upper hand against the undead host.",
         "chapterId": "chapter-2"
@@ -1778,7 +1778,7 @@ window.storyScenes = [
         "slideNumber": 193,
         "audioSrc": "assets/audio/chapter-2.m4a",
         "startTime": 718.54,
-        "image": "assets/images/scene193-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene193-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "The hunters were reclaimed, though Mozo lay dead beyond recall, Teagan shaken but alive, and Morgan freed from his bonds in the stable.",
         "chapterId": "chapter-2"
@@ -2084,7 +2084,7 @@ window.storyScenes = [
         "slideNumber": 227,
         "audioSrc": "assets/audio/chapter-3.m4a",
         "startTime": 256.7,
-        "image": "assets/images/scene227-cartoonified-v1-landscape.webp",
+        "image": "assets/images/scene227-cartoonified-v2-landscape.webp",
         "panAnimation": "left-to-right",
         "text": "The trap sprang true—Teir’s short spear struck with deadly grace, Dargon’s short bow sang a fatal note, and the shafts loosed by Ambrosius and Bors found their marks, felling the pair in a heartbeat.",
         "chapterId": "chapter-3"
