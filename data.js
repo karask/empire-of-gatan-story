@@ -1681,7 +1681,7 @@ window.storyScenes = [
         "startTime": 572.51,
         "image": "assets/images/scene182-cartoonified-v1-square.webp",
         "panAnimation": "bottom-to-top",
-        "text": "From the well clambered zombies, with strangely preserved forms, a mockery of life, assailing the company with claw and moan. From behind came the skeletons, their bones clattering as they struck.",
+        "text": "From the well clambered zombies, with strangely preserved forms, a mockery of life, assailing the company with claw and moan. From behind came the skeletons, their bones clattering as they struck. Teir froze, her breath caught in her throat, for among the undead stood her comrades of old, friends lost and ",
         "chapterId": "chapter-2"
     },
     {
